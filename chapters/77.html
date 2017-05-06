@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SicpTextbookRails</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="OavIagGmBxP6oxx1vQunnglHFnulMVF1q9ExIs83SbutKrrgbKRhah5WEbqCH0QiUfHJN/km0M37EaczKw0yxg==" />
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../assets/application-4afa0dc75ea8a2ff925eb41df709aa5f5fae6640df639d9b6ae50ed06be5a5d2.css" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon-5cc7f923fb946d60fe9552847f4b6edd0f8cf2f122d6f3fef39d59ce84d47942.ico" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	          crossorigin="anonymous">
+    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script src="../assets/application-e1d34c17f2d1680f21b650089aea08e3ecfe292f1157f2d23bfa7d4d9d530c8b.js"></script>
+
+    <!-- Rendering inline LaTeX -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true,
+          jax: ["input/TeX","output/HTML-CSS"]
+        }
+      });
+    </script>
+    <!--<script src="/mathjax/MathJax.js?config=TeX-AMS_HTML-full.js" type="text/javascript"></script>-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#nav-sidebar" aria-controls="nav-sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+       <a class="navbar-brand navbar-brand-short" href="../chapters.html">CS1101S: SICP</a>
+       <a class="navbar-brand navbar-brand-long" href="../chapters.html">CS1101S: Structure and Interpretation
+          of Computer Programs</a>
+
+       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+         <form id="search" class="form-inline my-2 my-lg-0">
+           <input id="search-box" class="form-control mr-sm-2" type="text" placeholder="Search">
+           <div id="search-button" class="btn btn-outline-success my-2 my-sm-0">Search</div>
+
+           <script>
+               (function() {
+                var cx = "002429487986305006822:ztnrbwx01qy";
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+               })();
+            </script>
+            <gcse:search></gcse:search>
+         </form>
+       </div>
+     </nav>
+
+     <div class="container scroll">
+
+          <div class="collapse" id="nav-sidebar" role="tablist" aria-multiselectable="true">
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-122">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-122" aria-expanded="false" aria-controls="sidebar-collapse-122">
+                    <a href="122.html">About</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-123">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-123" aria-expanded="false" aria-controls="sidebar-collapse-123">
+                    <a href="123.html">References</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-124">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-124" aria-expanded="false" aria-controls="sidebar-collapse-124">
+                    <a href="124.html">Webpreface</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-1">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-1" aria-expanded="true" aria-controls="sidebar-collapse-1">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-1" aria-expanded="true" aria-controls="sidebar-collapse-1">
+                    -
+                  </a>
+                    <a href="1.html">1.       Building Abstractions with       Functions    </a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-1" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-2">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-2" aria-expanded="true" aria-controls="sidebar-collapse-2">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-2" aria-expanded="true" aria-controls="sidebar-collapse-2">
+                    -
+                  </a>
+                    <a href="2.html">1. The Elements of Programming</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-2" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-3">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-3" aria-expanded="false" aria-controls="sidebar-collapse-3">
+                    <a href="3.html">1. Expressions</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-4">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-4" aria-expanded="false" aria-controls="sidebar-collapse-4">
+                    <a href="4.html">2. Naming and the Environment</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-5">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-5" aria-expanded="false" aria-controls="sidebar-collapse-5">
+                    <a href="5.html">3.           Evaluating          Operator Combinations                  </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-6">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-6" aria-expanded="false" aria-controls="sidebar-collapse-6">
+                    <a href="6.html">4.           Functions        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-7">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-7" aria-expanded="false" aria-controls="sidebar-collapse-7">
+                    <a href="7.html">5.           The Substitution Model for                                                 Function                              Application        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-8">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-8" aria-expanded="false" aria-controls="sidebar-collapse-8">
+                    <a href="8.html">6.           Conditional                                           Statements                              and Predicates        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-9">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-9" aria-expanded="false" aria-controls="sidebar-collapse-9">
+                    <a href="9.html">7. Example: Square Roots by Newtons Method</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-10">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-10" aria-expanded="false" aria-controls="sidebar-collapse-10">
+                    <a href="10.html">8.                                                 Functions                                as Black-Box Abstractions        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-11">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-11" aria-expanded="true" aria-controls="sidebar-collapse-11">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-11" aria-expanded="true" aria-controls="sidebar-collapse-11">
+                    -
+                  </a>
+                    <a href="11.html">2.             Functions            and the Processes They Generate      </a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-11" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-12">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-12" aria-expanded="false" aria-controls="sidebar-collapse-12">
+                    <a href="12.html">1. Linear Recursion and Iteration</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-13">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-13" aria-expanded="false" aria-controls="sidebar-collapse-13">
+                    <a href="13.html">2. Tree Recursion</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-14">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-14" aria-expanded="false" aria-controls="sidebar-collapse-14">
+                    <a href="14.html">3. Orders of Growth</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-15">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-15" aria-expanded="false" aria-controls="sidebar-collapse-15">
+                    <a href="15.html">4. Exponentiation</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-16">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-16" aria-expanded="false" aria-controls="sidebar-collapse-16">
+                    <a href="16.html">5. Greatest Common Divisors</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-17">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-17" aria-expanded="false" aria-controls="sidebar-collapse-17">
+                    <a href="17.html">6. Example: Testing for Primality</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-18">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-18" aria-expanded="true" aria-controls="sidebar-collapse-18">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-18" aria-expanded="true" aria-controls="sidebar-collapse-18">
+                    -
+                  </a>
+                    <a href="18.html">3.         Formulating Abstractions with Higher-Order         Functions      </a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-18" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-19">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-19" aria-expanded="false" aria-controls="sidebar-collapse-19">
+                    <a href="19.html">1.           Functions          as Arguments        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-20">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-20" aria-expanded="false" aria-controls="sidebar-collapse-20">
+                    <a href="20.html">2.           Function Definition Expressions          </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-21">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-21" aria-expanded="false" aria-controls="sidebar-collapse-21">
+                    <a href="21.html">3.             Functions            as General Methods          </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-22">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-22" aria-expanded="false" aria-controls="sidebar-collapse-22">
+                    <a href="22.html">4.               Functions              as Returned Values            </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-23">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-23" aria-expanded="true" aria-controls="sidebar-collapse-23">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-23" aria-expanded="true" aria-controls="sidebar-collapse-23">
+                    -
+                  </a>
+                    <a href="23.html">2. Building Abstractions with Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-23" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-24">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-24" aria-expanded="true" aria-controls="sidebar-collapse-24">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-24" aria-expanded="true" aria-controls="sidebar-collapse-24">
+                    -
+                  </a>
+                    <a href="24.html">1. Introduction to Data Abstraction</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-24" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-25">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-25" aria-expanded="false" aria-controls="sidebar-collapse-25">
+                    <a href="25.html">1.         Example: Arithmetic Operations for Rational Numbers      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-26">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-26" aria-expanded="false" aria-controls="sidebar-collapse-26">
+                    <a href="26.html">2.         Abstraction Barriers      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-27">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-27" aria-expanded="false" aria-controls="sidebar-collapse-27">
+                    <a href="27.html">3.         What Is Meant by Data?      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-28">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-28" aria-expanded="false" aria-controls="sidebar-collapse-28">
+                    <a href="28.html">4.         Extended Exercise: Interval Arithmetic      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-29">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-29" aria-expanded="true" aria-controls="sidebar-collapse-29">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-29" aria-expanded="true" aria-controls="sidebar-collapse-29">
+                    -
+                  </a>
+                    <a href="29.html">2. Hierarchical Data and the Closure Property</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-29" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-30">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-30" aria-expanded="false" aria-controls="sidebar-collapse-30">
+                    <a href="30.html">1.         Representing Sequences      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-31">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-31" aria-expanded="false" aria-controls="sidebar-collapse-31">
+                    <a href="31.html">2.         Hierarchical Structures      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-32">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-32" aria-expanded="false" aria-controls="sidebar-collapse-32">
+                    <a href="32.html">3.         Sequences as Conventional Interfaces      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-33">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-33" aria-expanded="false" aria-controls="sidebar-collapse-33">
+                    <a href="33.html">4.         Example: A Picture Language      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-34">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-34" aria-expanded="true" aria-controls="sidebar-collapse-34">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-34" aria-expanded="true" aria-controls="sidebar-collapse-34">
+                    -
+                  </a>
+                    <a href="34.html">3. Symbolic Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-34" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-35">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-35" aria-expanded="false" aria-controls="sidebar-collapse-35">
+                    <a href="35.html">1.         Strings      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-36">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-36" aria-expanded="false" aria-controls="sidebar-collapse-36">
+                    <a href="36.html">2.         Example: Symbolic Differentiation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-37">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-37" aria-expanded="false" aria-controls="sidebar-collapse-37">
+                    <a href="37.html">3.         Example: Representing Sets      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-38">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-38" aria-expanded="false" aria-controls="sidebar-collapse-38">
+                    <a href="38.html">4.         Example: Huffman Encoding Trees      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-39">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-39" aria-expanded="true" aria-controls="sidebar-collapse-39">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-39" aria-expanded="true" aria-controls="sidebar-collapse-39">
+                    -
+                  </a>
+                    <a href="39.html">4. Multiple Representations for Abstract Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-39" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-40">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-39" href="#sidebar-collapse-40" aria-expanded="false" aria-controls="sidebar-collapse-40">
+                    <a href="40.html">1.         Representations for Complex Numbers      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-41">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-39" href="#sidebar-collapse-41" aria-expanded="false" aria-controls="sidebar-collapse-41">
+                    <a href="41.html">2.         Tagged data      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-42">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-39" href="#sidebar-collapse-42" aria-expanded="false" aria-controls="sidebar-collapse-42">
+                    <a href="42.html">3.         Data-Directed Programming and Additivity      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-43">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-43" aria-expanded="true" aria-controls="sidebar-collapse-43">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-43" aria-expanded="true" aria-controls="sidebar-collapse-43">
+                    -
+                  </a>
+                    <a href="43.html">5. Systems with Generic Operations</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-43" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-44">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-43" href="#sidebar-collapse-44" aria-expanded="false" aria-controls="sidebar-collapse-44">
+                    <a href="44.html">1.         Generic Arithmetic Operations      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-45">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-43" href="#sidebar-collapse-45" aria-expanded="false" aria-controls="sidebar-collapse-45">
+                    <a href="45.html">2.         Combining Data of Different Types      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-46">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-43" href="#sidebar-collapse-46" aria-expanded="false" aria-controls="sidebar-collapse-46">
+                    <a href="46.html">3.         Example: Symbolic Algebra      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-47">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-47" aria-expanded="true" aria-controls="sidebar-collapse-47">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-47" aria-expanded="true" aria-controls="sidebar-collapse-47">
+                    -
+                  </a>
+                    <a href="47.html">3. Modularity, Objects, and State</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-47" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-48">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-48" aria-expanded="true" aria-controls="sidebar-collapse-48">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-48" aria-expanded="true" aria-controls="sidebar-collapse-48">
+                    -
+                  </a>
+                    <a href="48.html">1. Assignment and Local State</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-48" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-49">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-48" href="#sidebar-collapse-49" aria-expanded="false" aria-controls="sidebar-collapse-49">
+                    <a href="49.html">1.         Local State Variables      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-50">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-48" href="#sidebar-collapse-50" aria-expanded="false" aria-controls="sidebar-collapse-50">
+                    <a href="50.html">2.         The Benefits of Introducing Assignment      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-51">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-48" href="#sidebar-collapse-51" aria-expanded="false" aria-controls="sidebar-collapse-51">
+                    <a href="51.html">3.         The Costs of Introducing Assignment      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-52">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-52" aria-expanded="true" aria-controls="sidebar-collapse-52">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-52" aria-expanded="true" aria-controls="sidebar-collapse-52">
+                    -
+                  </a>
+                    <a href="52.html">2. The Environment Model of Evaluation</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-52" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-53">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-53" aria-expanded="false" aria-controls="sidebar-collapse-53">
+                    <a href="53.html">1.         The Rules for Evaluation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-54">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-54" aria-expanded="false" aria-controls="sidebar-collapse-54">
+                    <a href="54.html">2.         Applying Simple        Functions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-55">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-55" aria-expanded="false" aria-controls="sidebar-collapse-55">
+                    <a href="55.html">3.         Frames as the Repository of Local State      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-56">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-56" aria-expanded="false" aria-controls="sidebar-collapse-56">
+                    <a href="56.html">4.         Internal Definitions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-57">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-57" aria-expanded="true" aria-controls="sidebar-collapse-57">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-57" aria-expanded="true" aria-controls="sidebar-collapse-57">
+                    -
+                  </a>
+                    <a href="57.html">3. Modeling with Mutable Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-57" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-58">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-58" aria-expanded="false" aria-controls="sidebar-collapse-58">
+                    <a href="58.html">1.         Mutable List Structure      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-59">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-59" aria-expanded="false" aria-controls="sidebar-collapse-59">
+                    <a href="59.html">2.         Representing Queues      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-60">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-60" aria-expanded="false" aria-controls="sidebar-collapse-60">
+                    <a href="60.html">3.         Representing Tables      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-61">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-61" aria-expanded="false" aria-controls="sidebar-collapse-61">
+                    <a href="61.html">4.         A Simulator for Digital Circuits      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-62">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-62" aria-expanded="false" aria-controls="sidebar-collapse-62">
+                    <a href="62.html">5.         Propagation of Constraints      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-63">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-63" aria-expanded="true" aria-controls="sidebar-collapse-63">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-63" aria-expanded="true" aria-controls="sidebar-collapse-63">
+                    -
+                  </a>
+                    <a href="63.html">4. Concurrency: Time Is of the Essence</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-63" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-64">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-63" href="#sidebar-collapse-64" aria-expanded="false" aria-controls="sidebar-collapse-64">
+                    <a href="64.html">1.         The Nature of Time in Concurrent Systems      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-65">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-63" href="#sidebar-collapse-65" aria-expanded="false" aria-controls="sidebar-collapse-65">
+                    <a href="65.html">2.         Mechanisms for Controlling Concurrency      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-66">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-66" aria-expanded="true" aria-controls="sidebar-collapse-66">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-66" aria-expanded="true" aria-controls="sidebar-collapse-66">
+                    -
+                  </a>
+                    <a href="66.html">5. Streams</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-66" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-67">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-67" aria-expanded="false" aria-controls="sidebar-collapse-67">
+                    <a href="67.html">1.         Streams Are Delayed Lists      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-68">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-68" aria-expanded="false" aria-controls="sidebar-collapse-68">
+                    <a href="68.html">2.         Infinite Streams      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-69">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-69" aria-expanded="false" aria-controls="sidebar-collapse-69">
+                    <a href="69.html">3.   Exploiting the Stream Paradigm      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-70">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-70" aria-expanded="false" aria-controls="sidebar-collapse-70">
+                    <a href="70.html">4.   Streams and Delayed Evaluation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-71">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-71" aria-expanded="false" aria-controls="sidebar-collapse-71">
+                    <a href="71.html">5.   Modularity of Functional Programs and Modularity of Objects      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-72">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-72" aria-expanded="true" aria-controls="sidebar-collapse-72">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-72" aria-expanded="true" aria-controls="sidebar-collapse-72">
+                    -
+                  </a>
+                    <a href="72.html">4. Metalinguistic Abstraction</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-72" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-73">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-73" aria-expanded="true" aria-controls="sidebar-collapse-73">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-73" aria-expanded="true" aria-controls="sidebar-collapse-73">
+                    -
+                  </a>
+                    <a href="73.html">1. The Metacircular Evaluator</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-73" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-74">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-74" aria-expanded="false" aria-controls="sidebar-collapse-74">
+                    <a href="74.html">1.   The Core of the Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-75">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-75" aria-expanded="false" aria-controls="sidebar-collapse-75">
+                    <a href="75.html">2.   Representing Statements and Expressions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-76">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-76" aria-expanded="false" aria-controls="sidebar-collapse-76">
+                    <a href="76.html">3.   Evaluator Data Structures      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-77">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-77" aria-expanded="false" aria-controls="sidebar-collapse-77">
+                    <a href="77.html">4.   Running the Evaluator as a Program      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-78">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-78" aria-expanded="false" aria-controls="sidebar-collapse-78">
+                    <a href="78.html">5.   Data as Programs      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-79">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-79" aria-expanded="false" aria-controls="sidebar-collapse-79">
+                    <a href="79.html">6.   Internal Definitions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-80">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-80" aria-expanded="false" aria-controls="sidebar-collapse-80">
+                    <a href="80.html">7.   Separating Syntactic Analysis from Execution      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-81">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-81" aria-expanded="true" aria-controls="sidebar-collapse-81">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-81" aria-expanded="true" aria-controls="sidebar-collapse-81">
+                    -
+                  </a>
+                    <a href="81.html">2. Variations on a SchemeLazy Evaluation</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-81" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-82">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-81" href="#sidebar-collapse-82" aria-expanded="false" aria-controls="sidebar-collapse-82">
+                    <a href="82.html">1.   Normal Order and Applicative Order      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-83">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-81" href="#sidebar-collapse-83" aria-expanded="false" aria-controls="sidebar-collapse-83">
+                    <a href="83.html">2.   An Interpreter with Lazy Evaluation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-84">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-81" href="#sidebar-collapse-84" aria-expanded="false" aria-controls="sidebar-collapse-84">
+                    <a href="84.html">3.   Streams as Lazy Lists      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-85">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-85" aria-expanded="true" aria-controls="sidebar-collapse-85">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-85" aria-expanded="true" aria-controls="sidebar-collapse-85">
+                    -
+                  </a>
+                    <a href="85.html">3. Variations on a SchemeNondeterministic Computing</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-85" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-86">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-85" href="#sidebar-collapse-86" aria-expanded="false" aria-controls="sidebar-collapse-86">
+                    <a href="86.html">1.   Amb and Search      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-87">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-85" href="#sidebar-collapse-87" aria-expanded="false" aria-controls="sidebar-collapse-87">
+                    <a href="87.html">2.   Examples of Nondeterministic Programs      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-88">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-85" href="#sidebar-collapse-88" aria-expanded="false" aria-controls="sidebar-collapse-88">
+                    <a href="88.html">3.   Implementing the Amb Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-89">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-89" aria-expanded="true" aria-controls="sidebar-collapse-89">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-89" aria-expanded="true" aria-controls="sidebar-collapse-89">
+                    -
+                  </a>
+                    <a href="89.html">4. Logic Programming</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-89" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-90">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-90" aria-expanded="false" aria-controls="sidebar-collapse-90">
+                    <a href="90.html">1.   Deductive Information Retrieval      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-91">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-91" aria-expanded="false" aria-controls="sidebar-collapse-91">
+                    <a href="91.html">2.   How the Query System Works      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-92">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-92" aria-expanded="false" aria-controls="sidebar-collapse-92">
+                    <a href="92.html">3.   Is Logic Programming Mathematical Logic?      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-93">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-93" aria-expanded="false" aria-controls="sidebar-collapse-93">
+                    <a href="93.html">4.   Implementing the Query System      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-94">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-94" aria-expanded="true" aria-controls="sidebar-collapse-94">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-94" aria-expanded="true" aria-controls="sidebar-collapse-94">
+                    -
+                  </a>
+                    <a href="94.html">5. Computing with Register Machines</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-94" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-95">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-95" aria-expanded="true" aria-controls="sidebar-collapse-95">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-95" aria-expanded="true" aria-controls="sidebar-collapse-95">
+                    -
+                  </a>
+                    <a href="95.html">1. Designing Register Machines</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-95" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-96">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-96" aria-expanded="false" aria-controls="sidebar-collapse-96">
+                    <a href="96.html">1.   A Language for Describing Register Machines      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-97">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-97" aria-expanded="false" aria-controls="sidebar-collapse-97">
+                    <a href="97.html">2.   Abstraction in Machine Design      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-98">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-98" aria-expanded="false" aria-controls="sidebar-collapse-98">
+                    <a href="98.html">3.   Subroutines      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-99">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-99" aria-expanded="false" aria-controls="sidebar-collapse-99">
+                    <a href="99.html">4.   Using a Stack to Implement Recursion      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-100">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-100" aria-expanded="false" aria-controls="sidebar-collapse-100">
+                    <a href="100.html">5.   Instruction Summary      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-101">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-101" aria-expanded="true" aria-controls="sidebar-collapse-101">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-101" aria-expanded="true" aria-controls="sidebar-collapse-101">
+                    -
+                  </a>
+                    <a href="101.html">2. A Register-Machine Simulator</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-101" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-102">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-102" aria-expanded="false" aria-controls="sidebar-collapse-102">
+                    <a href="102.html">1.   The Machine Model      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-103">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-103" aria-expanded="false" aria-controls="sidebar-collapse-103">
+                    <a href="103.html">2.   The Assembler      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-104">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-104" aria-expanded="false" aria-controls="sidebar-collapse-104">
+                    <a href="104.html">3.   Generating Execution  Functions  for Instructions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-105">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-105" aria-expanded="false" aria-controls="sidebar-collapse-105">
+                    <a href="105.html">4.   Monitoring Machine Performance      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-106">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-106" aria-expanded="true" aria-controls="sidebar-collapse-106">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-106" aria-expanded="true" aria-controls="sidebar-collapse-106">
+                    -
+                  </a>
+                    <a href="106.html">3. Storage Allocation and Garbage Collection</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-106" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-107">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-106" href="#sidebar-collapse-107" aria-expanded="false" aria-controls="sidebar-collapse-107">
+                    <a href="107.html">1.   Memory as Vectors      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-108">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-106" href="#sidebar-collapse-108" aria-expanded="false" aria-controls="sidebar-collapse-108">
+                    <a href="108.html">2.   Maintaining the Illusion of Infinite Memory      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-109">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-109" aria-expanded="true" aria-controls="sidebar-collapse-109">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-109" aria-expanded="true" aria-controls="sidebar-collapse-109">
+                    -
+                  </a>
+                    <a href="109.html">4. The Explicit-Control Evaluator</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-109" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-110">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-110" aria-expanded="false" aria-controls="sidebar-collapse-110">
+                    <a href="110.html">1.   The Core of the Explicit-Control Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-111">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-111" aria-expanded="false" aria-controls="sidebar-collapse-111">
+                    <a href="111.html">2.   Sequence Evaluation and Tail Recursion      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-112">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-112" aria-expanded="false" aria-controls="sidebar-collapse-112">
+                    <a href="112.html">3.   Conditionals, Assignments, and Definitions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-113">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-113" aria-expanded="false" aria-controls="sidebar-collapse-113">
+                    <a href="113.html">4.   Running the Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-114">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-114" aria-expanded="true" aria-controls="sidebar-collapse-114">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-114" aria-expanded="true" aria-controls="sidebar-collapse-114">
+                    -
+                  </a>
+                    <a href="114.html">5. Compilation</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-114" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-115">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-115" aria-expanded="false" aria-controls="sidebar-collapse-115">
+                    <a href="115.html">1.   Structure of the Compiler      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-116">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-116" aria-expanded="false" aria-controls="sidebar-collapse-116">
+                    <a href="116.html">2.   Compiling Expressions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-117">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-117" aria-expanded="false" aria-controls="sidebar-collapse-117">
+                    <a href="117.html">3.   Compiling Combinations      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-118">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-118" aria-expanded="false" aria-controls="sidebar-collapse-118">
+                    <a href="118.html">4.   Combining Instruction Sequences      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-119">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-119" aria-expanded="false" aria-controls="sidebar-collapse-119">
+                    <a href="119.html">5.   An Example of Compiled Code      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-120">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-120" aria-expanded="false" aria-controls="sidebar-collapse-120">
+                    <a href="120.html">6.   Lexical Addressing      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-121">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-121" aria-expanded="false" aria-controls="sidebar-collapse-121">
+                    <a href="121.html">7.   Interfacing Compiled Code to the Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+           <div class="chapter-content">
+    <div class="chapter-title">
+        4.1.4.
+  Running the Evaluator as a Program
+      
+    </div>
+    <div class="chapter-text" >
+        <div class="SUBSECTION"><SUBSECTION>
+      
+
+      
+      
+      <p>
+  Given the evaluator, we have in our hands a description
+  (expressed in JavaScript) of the process
+  by which JavaScript expressions are evaluated.  One advantage of expressing the
+  evaluator as a program is that we can run the program.  This gives us,
+  running within JavaScript, a working model of how JavaScript itself evaluates
+  expressions.  This can serve as a framework for experimenting with
+  evaluation rules, as we shall do later in this chapter.
+      </p>
+
+      <p>
+  
+  Our evaluator program reduces expressions ultimately to the
+  application of primitive
+  functions.  Therefore, all that we need to
+  run the evaluator is to create a mechanism that calls on the underlying
+  JavaScript system to model the application of primitive
+  functions.
+      </p>
+
+      <p>
+  There must be a binding for each primitive
+  function
+  name, so that when
+<kbd>evaluate</kbd>
+evaluates the operator of an application of a primitive, it
+  will find an object to pass to <kbd>apply</kbd>.  We thus set up a 
+  
+  
+  global
+  environment that associates unique objects with the names of the
+  primitive
+  functions
+  that can appear
+  in the expressions we will be evaluating.  
+  <SPLIT>
+    
+    
+      The global environment also includes bindings for the symbol
+  
+  <kbd>undefined</kbd>, so that this value can be used as a variable 
+  in expressions to be evaluated.
+    
+  </SPLIT>
+  <div class="snippet" id="javascript_77_0_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function setup_environment() {\n   var initial_env = enclose_by(an_empty_frame,the_empty_environment);\n   for (var prop in primitive_functions) {\n      define_variable(prop,\n                      { tag: &quot;primitive&quot;,\n                        implementation: primitive_functions[prop] },\n                      initial_env);\n   }\n   define_variable(&quot;undefined&quot;,undefined,initial_env);\n   return initial_env;\n}','javascript_77_0','', event,1.0);window.eval('var primitive_functions={pair:pair,head:head,tail:tail,list:list,is_empty_list:is_empty_list,length:length,display:display,print:print,newline:newline,runtime:runtime,error:error,&quot;+&quot;:function(x,y){return x+y},&quot;-&quot;:function(x,y){return x-y},&quot;*&quot;:function(x,y){return x*y},&quot;/&quot;:function(x,y){return x/y},&quot;%&quot;:function(x,y){return x%y},&quot;===&quot;:function(x,y){return x===y},&quot;!==&quot;:function(x,y){return x!==y},&quot;&lt;&quot;:function(x,y){return x&lt;y},&quot;&lt;=&quot;:function(x,y){return x&lt;=y},&quot;!&quot;:function(x){return !x},&quot;&amp;&amp;&quot;:function(x,y){return x&amp;&amp;y},&quot;||&quot;:function(x,y){return x||y}};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};');">function setup_environment() {
+   var initial_env = enclose_by(an_empty_frame,the_empty_environment);
+   for (var prop in primitive_functions) {
+      define_variable(prop,
+                      { tag: "primitive",
+                        implementation: primitive_functions[prop] },
+                      initial_env);
+   }
+   define_variable("undefined",undefined,initial_env);
+   return initial_env;
+}</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20setup_environment()%20%7B%0A%20%20%20var%20initial_env%20=%20enclose_by(an_empty_frame,the_empty_environment);%0A%20%20%20for%20(var%20prop%20in%20primitive_functions)%20%7B%0A%20%20%20%20%20%20define_variable(prop,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20tag:%20%22primitive%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20implementation:%20primitive_functions%5Bprop%5D%20%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initial_env);%0A%20%20%20%7D%0A%20%20%20define_variable(%22undefined%22,undefined,initial_env);%0A%20%20%20return%20initial_env;%0A%7D&amp;hidden=var%20primitive_functions=%7Bpair:pair,head:head,tail:tail,list:list,is_empty_list:is_empty_list,length:length,display:display,print:print,newline:newline,runtime:runtime,error:error,%22+%22:function(x,y)%7Breturn%20x+y%7D,%22-%22:function(x,y)%7Breturn%20x-y%7D,%22*%22:function(x,y)%7Breturn%20x*y%7D,%22/%22:function(x,y)%7Breturn%20x/y%7D,%22%%22:function(x,y)%7Breturn%20x%y%7D,%22===%22:function(x,y)%7Breturn%20x===y%7D,%22!==%22:function(x,y)%7Breturn%20x!==y%7D,%22&amp;lt;%22:function(x,y)%7Breturn%20x" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+  <SPLIT>
+    
+    
+      <p>
+  It does not matter how we represent the primitive function
+  objects,
+  so long as <kbd>apply</kbd> can identify and apply them by using the
+  functions
+  <kbd>is_primitive-function</kbd> and 
+  <kbd>apply_primitive_function</kbd>.  We have chosen to represent a primitive
+  function
+  as an object tagged with <kbd>"primitive"</kbd>
+  containing a
+  function
+  in the underlying JavaScript that 
+  implements that primitive.
+    <div class="snippet" id="javascript_77_1_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function is_primitive_function(fun) {\n   return is_tagged_object(fun,&quot;primitive&quot;);\n}\nfunction primitive_implementation(fun) {\n   return fun.implementation;\n}','javascript_77_1','', event,1.0);window.eval('');">function is_primitive_function(fun) {
+   return is_tagged_object(fun,"primitive");
+}
+function primitive_implementation(fun) {
+   return fun.implementation;
+}</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20is_primitive_function(fun)%20%7B%0A%20%20%20return%20is_tagged_object(fun,%22primitive%22);%0A%7D%0Afunction%20primitive_implementation(fun)%20%7B%0A%20%20%20return%20fun.implementation;%0A%7D&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+    
+  </SPLIT>
+
+      <p>
+  
+    <kbd>setup_environment</kbd>
+    
+  
+  will get the primitive names and implementation
+  functions
+  from a list:<a class="superscript" id="footnote-link-1" href="77.html#footnote-1">[1]</a>
+
+  <div class="snippet" id="javascript_77_2_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('var primitive_functions = {\n       pair: pair,\n       head: head,\n       tail: tail,\n       list: list,\n       is_empty_list: is_empty_list,\n       length: length,\n       display: display,\n       print: print,\n       newline: newline,\n       runtime: runtime,\n       error: error,\n       &quot;+&quot;: function(x,y) { return x + y; },\n       &quot;-&quot;: function(x,y) { return x - y; },\n       &quot;*&quot;: function(x,y) { return x * y; },\n       &quot;/&quot;: function(x,y) { return x / y; },\n       &quot;%&quot;: function(x,y) { return x % y; },\n       &quot;===&quot;: function(x,y) { return x === y; },\n       &quot;!==&quot;: function(x,y) { return x !== y; },\n       &quot;&lt;&quot;: function(x,y) { return x &lt; y; },\n       &quot;&lt;=&quot;: function(x,y) { return x &lt;= y; },\n       &quot;!&quot;: function(x) { return ! x; },\n       &quot;&amp;&amp;&quot;: function(x,y) { return x &amp;&amp; y; },\n       &quot;||&quot;: function(x,y) { return x || y; }\n    };','javascript_77_2','', event,1.0);window.eval('');">var primitive_functions = {
+       pair: pair,
+       head: head,
+       tail: tail,
+       list: list,
+       is_empty_list: is_empty_list,
+       length: length,
+       display: display,
+       print: print,
+       newline: newline,
+       runtime: runtime,
+       error: error,
+       "+": function(x,y) { return x + y; },
+       "-": function(x,y) { return x - y; },
+       "*": function(x,y) { return x * y; },
+       "/": function(x,y) { return x / y; },
+       "%": function(x,y) { return x % y; },
+       "===": function(x,y) { return x === y; },
+       "!==": function(x,y) { return x !== y; },
+       "&lt;": function(x,y) { return x &lt; y; },
+       "&lt;=": function(x,y) { return x &lt;= y; },
+       "!": function(x) { return ! x; },
+       "&amp;&amp;": function(x,y) { return x &amp;&amp; y; },
+       "||": function(x,y) { return x || y; }
+    };</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=var%20primitive_functions%20=%20%7B%0A%20%20%20%20%20%20%20pair:%20pair,%0A%20%20%20%20%20%20%20head:%20head,%0A%20%20%20%20%20%20%20tail:%20tail,%0A%20%20%20%20%20%20%20list:%20list,%0A%20%20%20%20%20%20%20is_empty_list:%20is_empty_list,%0A%20%20%20%20%20%20%20length:%20length,%0A%20%20%20%20%20%20%20display:%20display,%0A%20%20%20%20%20%20%20print:%20print,%0A%20%20%20%20%20%20%20newline:%20newline,%0A%20%20%20%20%20%20%20runtime:%20runtime,%0A%20%20%20%20%20%20%20error:%20error,%0A%20%20%20%20%20%20%20%22+%22:%20function(x,y)%20%7B%20return%20x%20+%20y;%20%7D,%0A%20%20%20%20%20%20%20%22-%22:%20function(x,y)%20%7B%20return%20x%20-%20y;%20%7D,%0A%20%20%20%20%20%20%20%22*%22:%20function(x,y)%20%7B%20return%20x%20*%20y;%20%7D,%0A%20%20%20%20%20%20%20%22/%22:%20function(x,y)%20%7B%20return%20x%20/%20y;%20%7D,%0A%20%20%20%20%20%20%20%22%%22:%20function(x,y)%20%7B%20return%20x%20%%20y;%20%7D,%0A%20%20%20%20%20%20%20%22===%22:%20function(x,y)%20%7B%20return%20x%20===%20y;%20%7D,%0A%20%20%20%20%20%20%20%22!==%22:%20function(x,y)%20%7B%20return%20x%20!==%20y;%20%7D,%0A%20%20%20%20%20%20%20%22&amp;lt;%22:%20function(x,y)%20%7B%20return%20x%20&amp;lt;%20y;%20%7D,%0A%20%20%20%20%20%20%20%22&amp;lt;=%22:%20function(x,y)%20%7B%20return%20x%20&amp;lt;=%20y;%20%7D,%0A%20%20%20%20%20%20%20%22!%22:%20function(x)%20%7B%20return%20!%20x;%20%7D,%0A%20%20%20%20%20%20%20%22&amp;amp;&amp;amp;%22:%20function(x,y)%20%7B%20return%20x%20&amp;amp;&amp;amp;%20y;%20%7D,%0A%20%20%20%20%20%20%20%22%7C%7C%22:%20function(x,y)%20%7B%20return%20x%20%7C%7C%20y;%20%7D%0A%20%20%20%20%7D;&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+      <p>
+  To apply a primitive
+  function, we simply apply the implementation
+  function
+  to the arguments, using the underlying JavaScript system:<SPLIT>
+  
+      
+        <a class="superscript" id="footnote-link-2" href="77.html#footnote-2">[2]</a>
+      
+    </SPLIT>
+
+  <div class="snippet" id="javascript_77_3_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function apply_primitive_function(fun,argument_list) {\n    return apply_in_underlying_javascript(primitive_implementation(fun),\n                                          argument_list);     \n}','javascript_77_3','', event,1.0);window.eval('function apply_in_underlying_javascript(prim,argument_list){var argument_array=new Array();var i=0;while(!is_empty_list(argument_list)){argument_array[i++]=head(argument_list);argument_list=tail(argument_list)}return prim.apply(prim,argument_array)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};');">function apply_primitive_function(fun,argument_list) {
+    return apply_in_underlying_javascript(primitive_implementation(fun),
+                                          argument_list);     
+}</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20apply_primitive_function(fun,argument_list)%20%7B%0A%20%20%20%20return%20apply_in_underlying_javascript(primitive_implementation(fun),%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20argument_list);%20%20%20%20%20%0A%7D&amp;hidden=function%20apply_in_underlying_javascript(prim,argument_list)%7Bvar%20argument_array=new%20Array();var%20i=0;while(!is_empty_list(argument_list))%7Bargument_array%5Bi++%5D=head(argument_list);argument_list=tail(argument_list)%7Dreturn%20prim.apply(prim,argument_array)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+  
+      </p>
+
+      <SPLIT>
+  
+  
+      <p>
+  
+  
+  For convenience in running the metacircular evaluator, we provide a <EM>
+    driver loop</EM>. It prints a 
+  
+  <EM>prompt</EM>, reads an input expression,
+  evaluates this expression in the global environment, and prints the
+  result.  We precede each printed result by an <EM>output prompt</EM> so
+  as to distinguish the value of the expression from other
+  output that may be printed.
+
+  <div class="snippet" id="javascript_77_4_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function evaluate_toplevel(stmt,env) {\n   var value = evaluate(stmt,env);\n   if (is_return_value(value))\n      error(&quot;return not allowed outside of function definition&quot;);\n   else return value;\n}\nvar input_prompt = &quot;/// M-Eval input:&quot;;\nfunction prompt_and_parse() {\n   var program_string = prompt(input_prompt);\n   if (program_string === null) {\n       return {tag: &quot;exit&quot;};\n   } else {\n       return parser.parse(program_string);\n   }\n}','javascript_77_4','', event,1.0);window.eval('');">function evaluate_toplevel(stmt,env) {
+   var value = evaluate(stmt,env);
+   if (is_return_value(value))
+      error("return not allowed outside of function definition");
+   else return value;
+}
+var input_prompt = "/// M-Eval input:";
+function prompt_and_parse() {
+   var program_string = prompt(input_prompt);
+   if (program_string === null) {
+       return {tag: "exit"};
+   } else {
+       return parser.parse(program_string);
+   }
+}</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20evaluate_toplevel(stmt,env)%20%7B%0A%20%20%20var%20value%20=%20evaluate(stmt,env);%0A%20%20%20if%20(is_return_value(value))%0A%20%20%20%20%20%20error(%22return%20not%20allowed%20outside%20of%20function%20definition%22);%0A%20%20%20else%20return%20value;%0A%7D%0Avar%20input_prompt%20=%20%22///%20M-Eval%20input:%22;%0Afunction%20prompt_and_parse()%20%7B%0A%20%20%20var%20program_string%20=%20prompt(input_prompt);%0A%20%20%20if%20(program_string%20===%20null)%20%7B%0A%20%20%20%20%20%20%20return%20%7Btag:%20%22exit%22%7D;%0A%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20return%20parser.parse(program_string);%0A%20%20%20%7D%0A%7D&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  <div class="snippet" id="javascript_77_5_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function driver_loop() {\n   var input_program = prompt_and_parse();\n   if (is_tagged_object(input_program,&quot;exit&quot;)) return &quot;interpreter completed&quot;;\n   var output = evaluate_toplevel(input_program, the_global_environment);\n   user_print(output);\n   return driver_loop();\n}\n&quot;METACIRCULAR EVALUATOR LOADED&quot;;','javascript_77_5','', event,1.0);window.eval('function is_tagged_object(stmt,the_tag){return typeof stmt===&quot;object&quot;&amp;&amp;stmt.tag===the_tag};function is_self_evaluating(stmt){return stmt===[]||typeof stmt===&quot;number&quot;||typeof stmt===&quot;string&quot;||typeof stmt===&quot;boolean&quot;};function is_variable(stmt){return is_tagged_object(stmt,&quot;variable&quot;)}function variable_name(stmt){return stmt.name};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function lookup_variable_value(variable,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){return first_frame(env)[variable]}else{return env_loop(enclosing_environment(env))}}}return env_loop(env)};function is_assignment(stmt){return is_tagged_object(stmt,&quot;assignment&quot;)}function assignment_variable(stmt){return stmt.variable}function assignment_value(stmt){return stmt.value};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function set_variable_value(variable,value,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable - - assignment: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){add_binding_to_frame(variable,value,first_frame(env))}else{env_loop(enclosing_environment(env))}}}env_loop(env);return};function evaluate_assignment(stmt,env){var value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return value};function is_var_definition(stmt){return is_tagged_object(stmt,&quot;var_definition&quot;)}function var_definition_variable(stmt){return stmt.variable}function var_definition_value(stmt){return stmt.value};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function evaluate_var_definition(stmt,env){define_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return undefined};function is_if_statement(stmt){return is_tagged_object(stmt,&quot;if&quot;)}function if_predicate(stmt){return stmt.predicate}function if_consequent(stmt){return stmt.consequent}function if_alternative(stmt){return stmt.alternative};function is_true(x){return !is_false(x)}function is_false(x){return x===false||x===0||x===&quot;&quot;||x===undefined||x===NaN};function evaluate_if_statement(stmt,env){if(is_true(evaluate(if_predicate(stmt),env))){return evaluate(if_consequent(stmt),env)}else{return evaluate(if_alternative(stmt),env)}};function is_function_definition(stmt){return is_tagged_object(stmt,&quot;function_definition&quot;)}function function_definition_parameters(stmt){return stmt.parameters}function function_definition_body(stmt){return stmt.body};function evaluate_function_definition(stmt,env){return make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)}function make_function_value(parameters,body,env){return{tag:&quot;function_value&quot;,parameters:parameters,body:body,environment:env}}function is_compound_function_value(f){return is_tagged_object(f,&quot;function_value&quot;)}function function_value_parameters(value){return value.parameters}function function_value_body(value){return value.body}function function_value_environment(value){return value.environment};function is_sequence(stmt){return is_list(stmt)}function is_last_statement(stmts){return is_empty_list(tail(stmts))}function first_statement(stmts){return head(stmts)}function rest_statements(stmts){return tail(stmts)};function evaluate_sequence(stmts,env){if(is_last_statement(stmts)){return evaluate(first_statement(stmts),env)}else{var first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value)){return first_stmt_value}else{return evaluate_sequence(rest_statements(stmts),env)}}};function is_application(stmt){return is_tagged_object(stmt,&quot;application&quot;)}function operator(stmt){return stmt.operator}function operands(stmt){return stmt.operands}function no_operands(ops){return is_empty_list(ops)}function first_operand(ops){return head(ops)}function rest_operands(ops){return tail(ops)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_in_underlying_javascript(prim,argument_list){var argument_array=new Array();var i=0;while(!is_empty_list(argument_list)){argument_array[i++]=head(argument_list);argument_list=tail(argument_list)}return prim.apply(prim,argument_array)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_primitive_function(fun,argument_list){return apply_in_underlying_javascript(primitive_implementation(fun),argument_list)};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function extend_environment(vars,vals,base_env){if(length(vars)===length(vals)){return enclose_by(make_frame(vars,vals),base_env)}else{if(length(vars)&lt;length(vals)){error(&quot;Too many arguments supplied: &quot;,vars,vals)}else{error(&quot;Too few arguments supplied: &quot;,vars,vals)}}};function is_return_statement(stmt){return is_tagged_object(stmt,&quot;return_statement&quot;)}function return_statement_expression(stmt){return stmt.expression};function make_return_value(content){return{tag:&quot;return_value&quot;,content:content}}function is_return_value(value){return is_tagged_object(value,&quot;return_value&quot;)}function return_value_content(value){return value.content};function apply(fun,arguments){if(is_primitive_function(fun)){return apply_primitive_function(fun,arguments)}else{if(is_compound_function_value(fun)){var result=evaluate(function_value_body(fun),extend_environment(function_value_parameters(fun),arguments,function_value_environment(fun)));if(is_return_value(result)){return return_value_content(result)}else{return undefined}}else{error(&quot;Unknown function type - - APPLY: &quot;,fun)}}};function list_of_values(exps,env){if(no_operands(exps)){return[]}else{return pair(evaluate(first_operand(exps),env),list_of_values(rest_operands(exps),env))}};var primitive_functions={pair:pair,head:head,tail:tail,list:list,is_empty_list:is_empty_list,length:length,display:display,print:print,newline:newline,runtime:runtime,error:error,&quot;+&quot;:function(x,y){return x+y},&quot;-&quot;:function(x,y){return x-y},&quot;*&quot;:function(x,y){return x*y},&quot;/&quot;:function(x,y){return x/y},&quot;%&quot;:function(x,y){return x%y},&quot;===&quot;:function(x,y){return x===y},&quot;!==&quot;:function(x,y){return x!==y},&quot;&lt;&quot;:function(x,y){return x&lt;y},&quot;&lt;=&quot;:function(x,y){return x&lt;=y},&quot;!&quot;:function(x){return !x},&quot;&amp;&amp;&quot;:function(x,y){return x&amp;&amp;y},&quot;||&quot;:function(x,y){return x||y}};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function setup_environment(){var initial_env=enclose_by(an_empty_frame,the_empty_environment);for(var prop in primitive_functions){define_variable(prop,{tag:&quot;primitive&quot;,implementation:primitive_functions[prop]},initial_env)}define_variable(&quot;undefined&quot;,undefined,initial_env);return initial_env};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function evaluate(stmt,env){if(is_self_evaluating(stmt)){return stmt}else{if(is_variable(stmt)){return lookup_variable_value(variable_name(stmt),env)}else{if(is_assignment(stmt)){return evaluate_assignment(stmt,env)}else{if(is_var_definition(stmt)){return evaluate_var_definition(stmt,env)}else{if(is_if_statement(stmt)){return evaluate_if_statement(stmt,env)}else{if(is_function_definition(stmt)){return evaluate_function_definition(stmt,env)}else{if(is_sequence(stmt)){return evaluate_sequence(stmt,env)}else{if(is_application(stmt)){return apply(evaluate(operator(stmt),env),list_of_values(operands(stmt),env))}else{if(is_return_statement(stmt)){return make_return_value(evaluate(return_statement_expression(stmt),env))}else{error(&quot;Unknown expression type - - evaluate: &quot;,stmt)}}}}}}}}}};function user_print(object){if(is_compound_function_value(object)){alert(&quot;Result: function with parameters: &quot;+format(object.parameters)+&quot; body: &quot;+format(object.body))}else{alert(&quot;Result: &quot;+object)}};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};');">function driver_loop() {
+   var input_program = prompt_and_parse();
+   if (is_tagged_object(input_program,"exit")) return "interpreter completed";
+   var output = evaluate_toplevel(input_program, the_global_environment);
+   user_print(output);
+   return driver_loop();
+}
+"METACIRCULAR EVALUATOR LOADED";</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20driver_loop()%20%7B%0A%20%20%20var%20input_program%20=%20prompt_and_parse();%0A%20%20%20if%20(is_tagged_object(input_program,%22exit%22))%20return%20%22interpreter%20completed%22;%0A%20%20%20var%20output%20=%20evaluate_toplevel(input_program,%20the_global_environment);%0A%20%20%20user_print(output);%0A%20%20%20return%20driver_loop();%0A%7D%0A%22METACIRCULAR%20EVALUATOR%20LOADED%22;&amp;hidden=function%20is_tagged_object(stmt,the_tag)%7Breturn%20typeof%20stmt===%22object%22&amp;amp;&amp;amp;stmt.tag===the_tag%7D;function%20is_self_evaluating(stmt)%7Breturn%20stmt===%5B%5D%7C%7Ctypeof%20stmt===%22number%22%7C%7Ctypeof%20stmt===%22string%22%7C%7Ctypeof%20stmt===%22boolean%22%7D;function%20is_variable(stmt)%7Breturn%20is_tagged_object(stmt,%22variable%22)%7Dfunction%20variable_name(stmt)%7Breturn%20stmt.name%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20lookup_variable_value(variable,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Breturn%20first_frame(env)%5Bvariable%5D%7Delse%7Breturn%20env_loop(enclosing_environment(env))%7D%7D%7Dreturn%20env_loop(env)%7D;function%20is_assignment(stmt)%7Breturn%20is_tagged_object(stmt,%22assignment%22)%7Dfunction%20assignment_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20assignment_value(stmt)%7Breturn%20stmt.value%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20set_variable_value(variable,value,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable%20-%20-%20assignment:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Badd_binding_to_frame(variable,value,first_frame(env))%7Delse%7Benv_loop(enclosing_environment(env))%7D%7D%7Denv_loop(env);return%7D;function%20evaluate_assignment(stmt,env)%7Bvar%20value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return%20value%7D;function%20is_var_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22var_definition%22)%7Dfunction%20var_definition_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20var_definition_value(stmt)%7Breturn%20stmt.value%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20define_variable(variable,value,env)%7Bvar%20frame=first_frame(env);return%20add_binding_to_frame(variable,value,frame)%7D;function%20evaluate_var_definition(stmt,env)%7Bdefine_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return%20undefined%7D;function%20is_if_statement(stmt)%7Breturn%20is_tagged_object(stmt,%22if%22)%7Dfunction%20if_predicate(stmt)%7Breturn%20stmt.predicate%7Dfunction%20if_consequent(stmt)%7Breturn%20stmt.consequent%7Dfunction%20if_alternative(stmt)%7Breturn%20stmt.alternative%7D;function%20is_true(x)%7Breturn%20!is_false(x)%7Dfunction%20is_false(x)%7Breturn%20x===false%7C%7Cx===0%7C%7Cx===%22%22%7C%7Cx===undefined%7C%7Cx===NaN%7D;function%20evaluate_if_statement(stmt,env)%7Bif(is_true(evaluate(if_predicate(stmt),env)))%7Breturn%20evaluate(if_consequent(stmt),env)%7Delse%7Breturn%20evaluate(if_alternative(stmt),env)%7D%7D;function%20is_function_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22function_definition%22)%7Dfunction%20function_definition_parameters(stmt)%7Breturn%20stmt.parameters%7Dfunction%20function_definition_body(stmt)%7Breturn%20stmt.body%7D;function%20evaluate_function_definition(stmt,env)%7Breturn%20make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)%7Dfunction%20make_function_value(parameters,body,env)%7Breturn%7Btag:%22function_value%22,parameters:parameters,body:body,environment:env%7D%7Dfunction%20is_compound_function_value(f)%7Breturn%20is_tagged_object(f,%22function_value%22)%7Dfunction%20function_value_parameters(value)%7Breturn%20value.parameters%7Dfunction%20function_value_body(value)%7Breturn%20value.body%7Dfunction%20function_value_environment(value)%7Breturn%20value.environment%7D;function%20is_sequence(stmt)%7Breturn%20is_list(stmt)%7Dfunction%20is_last_statement(stmts)%7Breturn%20is_empty_list(tail(stmts))%7Dfunction%20first_statement(stmts)%7Breturn%20head(stmts)%7Dfunction%20rest_statements(stmts)%7Breturn%20tail(stmts)%7D;function%20evaluate_sequence(stmts,env)%7Bif(is_last_statement(stmts))%7Breturn%20evaluate(first_statement(stmts),env)%7Delse%7Bvar%20first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value))%7Breturn%20first_stmt_value%7Delse%7Breturn%20evaluate_sequence(rest_statements(stmts),env)%7D%7D%7D;function%20is_application(stmt)%7Breturn%20is_tagged_object(stmt,%22application%22)%7Dfunction%20operator(stmt)%7Breturn%20stmt.operator%7Dfunction%20operands(stmt)%7Breturn%20stmt.operands%7Dfunction%20no_operands(ops)%7Breturn%20is_empty_list(ops)%7Dfunction%20first_operand(ops)%7Breturn%20head(ops)%7Dfunction%20rest_operands(ops)%7Breturn%20tail(ops)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_in_underlying_javascript(prim,argument_list)%7Bvar%20argument_array=new%20Array();var%20i=0;while(!is_empty_list(argument_list))%7Bargument_array%5Bi++%5D=head(argument_list);argument_list=tail(argument_list)%7Dreturn%20prim.apply(prim,argument_array)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_primitive_function(fun,argument_list)%7Breturn%20apply_in_underlying_javascript(primitive_implementation(fun),argument_list)%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20extend_environment(vars,vals,base_env)%7Bif(length(vars)===length(vals))%7Breturn%20enclose_by(make_frame(vars,vals),base_env)%7Delse%7Bif(length(vars)" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+  The function <kbd>prompt_and_parse</kbd> reads a statement as
+  a string
+  from a popup window and transforms it into a tagged-object representation
+  of the statement, according to the description in section
+  <REF NAME="sec:representing-expressions"></REF>. This process is called 
+  <EM>parsing</EM>.
+      </p>
+  
+      </SPLIT>
+
+      <p>
+  We use a special printing
+  
+  function <kbd>user_print</kbd>, 
+  to avoid printing the environment part of a compound
+  function, which may be a very long list
+  (or may even contain cycles).
+
+  <div class="snippet" id="javascript_77_6_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function user_print(object) {\n   if (is_compound_function_value(object))\n      alert(&quot;Result: function with &quot;+\n            &quot;parameters: &quot; + format(object.parameters) +\n            &quot; body: &quot; + format(object.body));\n   else alert(&quot;Result: &quot;+object);\n}','javascript_77_6','', event,1.0);window.eval('');">function user_print(object) {
+   if (is_compound_function_value(object))
+      alert("Result: function with "+
+            "parameters: " + format(object.parameters) +
+            " body: " + format(object.body));
+   else alert("Result: "+object);
+}</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20user_print(object)%20%7B%0A%20%20%20if%20(is_compound_function_value(object))%0A%20%20%20%20%20%20alert(%22Result:%20function%20with%20%22+%0A%20%20%20%20%20%20%20%20%20%20%20%20%22parameters:%20%22%20+%20format(object.parameters)%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%20body:%20%22%20+%20format(object.body));%0A%20%20%20else%20alert(%22Result:%20%22+object);%0A%7D&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+      <p>
+  Now all we need to do to run the evaluator is to initialize the
+  global environment and start the driver loop.  Here is a sample
+  interaction:
+
+  <div class="snippet" id="javascript_77_7_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('var the_global_environment = setup_environment();\ndriver_loop();','javascript_77_7','', event,1.0);window.eval('function is_tagged_object(stmt,the_tag){return typeof stmt===&quot;object&quot;&amp;&amp;stmt.tag===the_tag};function is_self_evaluating(stmt){return stmt===[]||typeof stmt===&quot;number&quot;||typeof stmt===&quot;string&quot;||typeof stmt===&quot;boolean&quot;};function is_variable(stmt){return is_tagged_object(stmt,&quot;variable&quot;)}function variable_name(stmt){return stmt.name};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function lookup_variable_value(variable,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){return first_frame(env)[variable]}else{return env_loop(enclosing_environment(env))}}}return env_loop(env)};function is_assignment(stmt){return is_tagged_object(stmt,&quot;assignment&quot;)}function assignment_variable(stmt){return stmt.variable}function assignment_value(stmt){return stmt.value};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function set_variable_value(variable,value,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable - - assignment: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){add_binding_to_frame(variable,value,first_frame(env))}else{env_loop(enclosing_environment(env))}}}env_loop(env);return};function evaluate_assignment(stmt,env){var value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return value};function is_var_definition(stmt){return is_tagged_object(stmt,&quot;var_definition&quot;)}function var_definition_variable(stmt){return stmt.variable}function var_definition_value(stmt){return stmt.value};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function evaluate_var_definition(stmt,env){define_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return undefined};function is_if_statement(stmt){return is_tagged_object(stmt,&quot;if&quot;)}function if_predicate(stmt){return stmt.predicate}function if_consequent(stmt){return stmt.consequent}function if_alternative(stmt){return stmt.alternative};function is_true(x){return !is_false(x)}function is_false(x){return x===false||x===0||x===&quot;&quot;||x===undefined||x===NaN};function evaluate_if_statement(stmt,env){if(is_true(evaluate(if_predicate(stmt),env))){return evaluate(if_consequent(stmt),env)}else{return evaluate(if_alternative(stmt),env)}};function is_function_definition(stmt){return is_tagged_object(stmt,&quot;function_definition&quot;)}function function_definition_parameters(stmt){return stmt.parameters}function function_definition_body(stmt){return stmt.body};function evaluate_function_definition(stmt,env){return make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)}function make_function_value(parameters,body,env){return{tag:&quot;function_value&quot;,parameters:parameters,body:body,environment:env}}function is_compound_function_value(f){return is_tagged_object(f,&quot;function_value&quot;)}function function_value_parameters(value){return value.parameters}function function_value_body(value){return value.body}function function_value_environment(value){return value.environment};function is_sequence(stmt){return is_list(stmt)}function is_last_statement(stmts){return is_empty_list(tail(stmts))}function first_statement(stmts){return head(stmts)}function rest_statements(stmts){return tail(stmts)};function evaluate_sequence(stmts,env){if(is_last_statement(stmts)){return evaluate(first_statement(stmts),env)}else{var first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value)){return first_stmt_value}else{return evaluate_sequence(rest_statements(stmts),env)}}};function is_application(stmt){return is_tagged_object(stmt,&quot;application&quot;)}function operator(stmt){return stmt.operator}function operands(stmt){return stmt.operands}function no_operands(ops){return is_empty_list(ops)}function first_operand(ops){return head(ops)}function rest_operands(ops){return tail(ops)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_in_underlying_javascript(prim,argument_list){var argument_array=new Array();var i=0;while(!is_empty_list(argument_list)){argument_array[i++]=head(argument_list);argument_list=tail(argument_list)}return prim.apply(prim,argument_array)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_primitive_function(fun,argument_list){return apply_in_underlying_javascript(primitive_implementation(fun),argument_list)};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function extend_environment(vars,vals,base_env){if(length(vars)===length(vals)){return enclose_by(make_frame(vars,vals),base_env)}else{if(length(vars)&lt;length(vals)){error(&quot;Too many arguments supplied: &quot;,vars,vals)}else{error(&quot;Too few arguments supplied: &quot;,vars,vals)}}};function is_return_statement(stmt){return is_tagged_object(stmt,&quot;return_statement&quot;)}function return_statement_expression(stmt){return stmt.expression};function make_return_value(content){return{tag:&quot;return_value&quot;,content:content}}function is_return_value(value){return is_tagged_object(value,&quot;return_value&quot;)}function return_value_content(value){return value.content};function apply(fun,arguments){if(is_primitive_function(fun)){return apply_primitive_function(fun,arguments)}else{if(is_compound_function_value(fun)){var result=evaluate(function_value_body(fun),extend_environment(function_value_parameters(fun),arguments,function_value_environment(fun)));if(is_return_value(result)){return return_value_content(result)}else{return undefined}}else{error(&quot;Unknown function type - - APPLY: &quot;,fun)}}};function list_of_values(exps,env){if(no_operands(exps)){return[]}else{return pair(evaluate(first_operand(exps),env),list_of_values(rest_operands(exps),env))}};var primitive_functions={pair:pair,head:head,tail:tail,list:list,is_empty_list:is_empty_list,length:length,display:display,print:print,newline:newline,runtime:runtime,error:error,&quot;+&quot;:function(x,y){return x+y},&quot;-&quot;:function(x,y){return x-y},&quot;*&quot;:function(x,y){return x*y},&quot;/&quot;:function(x,y){return x/y},&quot;%&quot;:function(x,y){return x%y},&quot;===&quot;:function(x,y){return x===y},&quot;!==&quot;:function(x,y){return x!==y},&quot;&lt;&quot;:function(x,y){return x&lt;y},&quot;&lt;=&quot;:function(x,y){return x&lt;=y},&quot;!&quot;:function(x){return !x},&quot;&amp;&amp;&quot;:function(x,y){return x&amp;&amp;y},&quot;||&quot;:function(x,y){return x||y}};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function setup_environment(){var initial_env=enclose_by(an_empty_frame,the_empty_environment);for(var prop in primitive_functions){define_variable(prop,{tag:&quot;primitive&quot;,implementation:primitive_functions[prop]},initial_env)}define_variable(&quot;undefined&quot;,undefined,initial_env);return initial_env};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function evaluate(stmt,env){if(is_self_evaluating(stmt)){return stmt}else{if(is_variable(stmt)){return lookup_variable_value(variable_name(stmt),env)}else{if(is_assignment(stmt)){return evaluate_assignment(stmt,env)}else{if(is_var_definition(stmt)){return evaluate_var_definition(stmt,env)}else{if(is_if_statement(stmt)){return evaluate_if_statement(stmt,env)}else{if(is_function_definition(stmt)){return evaluate_function_definition(stmt,env)}else{if(is_sequence(stmt)){return evaluate_sequence(stmt,env)}else{if(is_application(stmt)){return apply(evaluate(operator(stmt),env),list_of_values(operands(stmt),env))}else{if(is_return_statement(stmt)){return make_return_value(evaluate(return_statement_expression(stmt),env))}else{error(&quot;Unknown expression type - - evaluate: &quot;,stmt)}}}}}}}}}};function user_print(object){if(is_compound_function_value(object)){alert(&quot;Result: function with parameters: &quot;+format(object.parameters)+&quot; body: &quot;+format(object.body))}else{alert(&quot;Result: &quot;+object)}};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function driver_loop(){var input_program=prompt_and_parse();if(is_tagged_object(input_program,&quot;exit&quot;)){return&quot;interpreter completed&quot;}var output=evaluate_toplevel(input_program,the_global_environment);user_print(output);return driver_loop()}&quot;METACIRCULAR EVALUATOR LOADED&quot;;');">var the_global_environment = setup_environment();
+driver_loop();</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=var%20the_global_environment%20=%20setup_environment();%0Adriver_loop();&amp;hidden=function%20is_tagged_object(stmt,the_tag)%7Breturn%20typeof%20stmt===%22object%22&amp;amp;&amp;amp;stmt.tag===the_tag%7D;function%20is_self_evaluating(stmt)%7Breturn%20stmt===%5B%5D%7C%7Ctypeof%20stmt===%22number%22%7C%7Ctypeof%20stmt===%22string%22%7C%7Ctypeof%20stmt===%22boolean%22%7D;function%20is_variable(stmt)%7Breturn%20is_tagged_object(stmt,%22variable%22)%7Dfunction%20variable_name(stmt)%7Breturn%20stmt.name%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20lookup_variable_value(variable,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Breturn%20first_frame(env)%5Bvariable%5D%7Delse%7Breturn%20env_loop(enclosing_environment(env))%7D%7D%7Dreturn%20env_loop(env)%7D;function%20is_assignment(stmt)%7Breturn%20is_tagged_object(stmt,%22assignment%22)%7Dfunction%20assignment_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20assignment_value(stmt)%7Breturn%20stmt.value%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20set_variable_value(variable,value,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable%20-%20-%20assignment:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Badd_binding_to_frame(variable,value,first_frame(env))%7Delse%7Benv_loop(enclosing_environment(env))%7D%7D%7Denv_loop(env);return%7D;function%20evaluate_assignment(stmt,env)%7Bvar%20value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return%20value%7D;function%20is_var_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22var_definition%22)%7Dfunction%20var_definition_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20var_definition_value(stmt)%7Breturn%20stmt.value%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20define_variable(variable,value,env)%7Bvar%20frame=first_frame(env);return%20add_binding_to_frame(variable,value,frame)%7D;function%20evaluate_var_definition(stmt,env)%7Bdefine_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return%20undefined%7D;function%20is_if_statement(stmt)%7Breturn%20is_tagged_object(stmt,%22if%22)%7Dfunction%20if_predicate(stmt)%7Breturn%20stmt.predicate%7Dfunction%20if_consequent(stmt)%7Breturn%20stmt.consequent%7Dfunction%20if_alternative(stmt)%7Breturn%20stmt.alternative%7D;function%20is_true(x)%7Breturn%20!is_false(x)%7Dfunction%20is_false(x)%7Breturn%20x===false%7C%7Cx===0%7C%7Cx===%22%22%7C%7Cx===undefined%7C%7Cx===NaN%7D;function%20evaluate_if_statement(stmt,env)%7Bif(is_true(evaluate(if_predicate(stmt),env)))%7Breturn%20evaluate(if_consequent(stmt),env)%7Delse%7Breturn%20evaluate(if_alternative(stmt),env)%7D%7D;function%20is_function_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22function_definition%22)%7Dfunction%20function_definition_parameters(stmt)%7Breturn%20stmt.parameters%7Dfunction%20function_definition_body(stmt)%7Breturn%20stmt.body%7D;function%20evaluate_function_definition(stmt,env)%7Breturn%20make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)%7Dfunction%20make_function_value(parameters,body,env)%7Breturn%7Btag:%22function_value%22,parameters:parameters,body:body,environment:env%7D%7Dfunction%20is_compound_function_value(f)%7Breturn%20is_tagged_object(f,%22function_value%22)%7Dfunction%20function_value_parameters(value)%7Breturn%20value.parameters%7Dfunction%20function_value_body(value)%7Breturn%20value.body%7Dfunction%20function_value_environment(value)%7Breturn%20value.environment%7D;function%20is_sequence(stmt)%7Breturn%20is_list(stmt)%7Dfunction%20is_last_statement(stmts)%7Breturn%20is_empty_list(tail(stmts))%7Dfunction%20first_statement(stmts)%7Breturn%20head(stmts)%7Dfunction%20rest_statements(stmts)%7Breturn%20tail(stmts)%7D;function%20evaluate_sequence(stmts,env)%7Bif(is_last_statement(stmts))%7Breturn%20evaluate(first_statement(stmts),env)%7Delse%7Bvar%20first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value))%7Breturn%20first_stmt_value%7Delse%7Breturn%20evaluate_sequence(rest_statements(stmts),env)%7D%7D%7D;function%20is_application(stmt)%7Breturn%20is_tagged_object(stmt,%22application%22)%7Dfunction%20operator(stmt)%7Breturn%20stmt.operator%7Dfunction%20operands(stmt)%7Breturn%20stmt.operands%7Dfunction%20no_operands(ops)%7Breturn%20is_empty_list(ops)%7Dfunction%20first_operand(ops)%7Breturn%20head(ops)%7Dfunction%20rest_operands(ops)%7Breturn%20tail(ops)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_in_underlying_javascript(prim,argument_list)%7Bvar%20argument_array=new%20Array();var%20i=0;while(!is_empty_list(argument_list))%7Bargument_array%5Bi++%5D=head(argument_list);argument_list=tail(argument_list)%7Dreturn%20prim.apply(prim,argument_array)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_primitive_function(fun,argument_list)%7Breturn%20apply_in_underlying_javascript(primitive_implementation(fun),argument_list)%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20extend_environment(vars,vals,base_env)%7Bif(length(vars)===length(vals))%7Breturn%20enclose_by(make_frame(vars,vals),base_env)%7Delse%7Bif(length(vars)" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  <kbd EVAL="no" class="snippet">;;; M-Eval input:
+function append(xs,y) { 
+   if (is_empty_list(xs)) 
+      return y; 
+   else 
+      return pair(head(xs),append(tail(xs),y)); 
+} 
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+append(pair(1,[]),pair(2,[]));
+         (append (cdr x) y))))
+;;; M-Eval value:
+[1,[2,[]]]</kbd>
+
+  Play with the following examples:
+
+  <div class="snippet" id="javascript_77_8_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('// true; 1;','javascript_77_8','', event,1.0);window.eval('function is_tagged_object(stmt,the_tag){return typeof stmt===&quot;object&quot;&amp;&amp;stmt.tag===the_tag};function is_self_evaluating(stmt){return stmt===[]||typeof stmt===&quot;number&quot;||typeof stmt===&quot;string&quot;||typeof stmt===&quot;boolean&quot;};function is_variable(stmt){return is_tagged_object(stmt,&quot;variable&quot;)}function variable_name(stmt){return stmt.name};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function lookup_variable_value(variable,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){return first_frame(env)[variable]}else{return env_loop(enclosing_environment(env))}}}return env_loop(env)};function is_assignment(stmt){return is_tagged_object(stmt,&quot;assignment&quot;)}function assignment_variable(stmt){return stmt.variable}function assignment_value(stmt){return stmt.value};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function set_variable_value(variable,value,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable - - assignment: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){add_binding_to_frame(variable,value,first_frame(env))}else{env_loop(enclosing_environment(env))}}}env_loop(env);return};function evaluate_assignment(stmt,env){var value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return value};function is_var_definition(stmt){return is_tagged_object(stmt,&quot;var_definition&quot;)}function var_definition_variable(stmt){return stmt.variable}function var_definition_value(stmt){return stmt.value};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function evaluate_var_definition(stmt,env){define_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return undefined};function is_if_statement(stmt){return is_tagged_object(stmt,&quot;if&quot;)}function if_predicate(stmt){return stmt.predicate}function if_consequent(stmt){return stmt.consequent}function if_alternative(stmt){return stmt.alternative};function is_true(x){return !is_false(x)}function is_false(x){return x===false||x===0||x===&quot;&quot;||x===undefined||x===NaN};function evaluate_if_statement(stmt,env){if(is_true(evaluate(if_predicate(stmt),env))){return evaluate(if_consequent(stmt),env)}else{return evaluate(if_alternative(stmt),env)}};function is_function_definition(stmt){return is_tagged_object(stmt,&quot;function_definition&quot;)}function function_definition_parameters(stmt){return stmt.parameters}function function_definition_body(stmt){return stmt.body};function evaluate_function_definition(stmt,env){return make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)}function make_function_value(parameters,body,env){return{tag:&quot;function_value&quot;,parameters:parameters,body:body,environment:env}}function is_compound_function_value(f){return is_tagged_object(f,&quot;function_value&quot;)}function function_value_parameters(value){return value.parameters}function function_value_body(value){return value.body}function function_value_environment(value){return value.environment};function is_sequence(stmt){return is_list(stmt)}function is_last_statement(stmts){return is_empty_list(tail(stmts))}function first_statement(stmts){return head(stmts)}function rest_statements(stmts){return tail(stmts)};function evaluate_sequence(stmts,env){if(is_last_statement(stmts)){return evaluate(first_statement(stmts),env)}else{var first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value)){return first_stmt_value}else{return evaluate_sequence(rest_statements(stmts),env)}}};function is_application(stmt){return is_tagged_object(stmt,&quot;application&quot;)}function operator(stmt){return stmt.operator}function operands(stmt){return stmt.operands}function no_operands(ops){return is_empty_list(ops)}function first_operand(ops){return head(ops)}function rest_operands(ops){return tail(ops)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_in_underlying_javascript(prim,argument_list){var argument_array=new Array();var i=0;while(!is_empty_list(argument_list)){argument_array[i++]=head(argument_list);argument_list=tail(argument_list)}return prim.apply(prim,argument_array)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_primitive_function(fun,argument_list){return apply_in_underlying_javascript(primitive_implementation(fun),argument_list)};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function extend_environment(vars,vals,base_env){if(length(vars)===length(vals)){return enclose_by(make_frame(vars,vals),base_env)}else{if(length(vars)&lt;length(vals)){error(&quot;Too many arguments supplied: &quot;,vars,vals)}else{error(&quot;Too few arguments supplied: &quot;,vars,vals)}}};function is_return_statement(stmt){return is_tagged_object(stmt,&quot;return_statement&quot;)}function return_statement_expression(stmt){return stmt.expression};function make_return_value(content){return{tag:&quot;return_value&quot;,content:content}}function is_return_value(value){return is_tagged_object(value,&quot;return_value&quot;)}function return_value_content(value){return value.content};function apply(fun,arguments){if(is_primitive_function(fun)){return apply_primitive_function(fun,arguments)}else{if(is_compound_function_value(fun)){var result=evaluate(function_value_body(fun),extend_environment(function_value_parameters(fun),arguments,function_value_environment(fun)));if(is_return_value(result)){return return_value_content(result)}else{return undefined}}else{error(&quot;Unknown function type - - APPLY: &quot;,fun)}}};function list_of_values(exps,env){if(no_operands(exps)){return[]}else{return pair(evaluate(first_operand(exps),env),list_of_values(rest_operands(exps),env))}};var primitive_functions={pair:pair,head:head,tail:tail,list:list,is_empty_list:is_empty_list,length:length,display:display,print:print,newline:newline,runtime:runtime,error:error,&quot;+&quot;:function(x,y){return x+y},&quot;-&quot;:function(x,y){return x-y},&quot;*&quot;:function(x,y){return x*y},&quot;/&quot;:function(x,y){return x/y},&quot;%&quot;:function(x,y){return x%y},&quot;===&quot;:function(x,y){return x===y},&quot;!==&quot;:function(x,y){return x!==y},&quot;&lt;&quot;:function(x,y){return x&lt;y},&quot;&lt;=&quot;:function(x,y){return x&lt;=y},&quot;!&quot;:function(x){return !x},&quot;&amp;&amp;&quot;:function(x,y){return x&amp;&amp;y},&quot;||&quot;:function(x,y){return x||y}};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function setup_environment(){var initial_env=enclose_by(an_empty_frame,the_empty_environment);for(var prop in primitive_functions){define_variable(prop,{tag:&quot;primitive&quot;,implementation:primitive_functions[prop]},initial_env)}define_variable(&quot;undefined&quot;,undefined,initial_env);return initial_env};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function evaluate(stmt,env){if(is_self_evaluating(stmt)){return stmt}else{if(is_variable(stmt)){return lookup_variable_value(variable_name(stmt),env)}else{if(is_assignment(stmt)){return evaluate_assignment(stmt,env)}else{if(is_var_definition(stmt)){return evaluate_var_definition(stmt,env)}else{if(is_if_statement(stmt)){return evaluate_if_statement(stmt,env)}else{if(is_function_definition(stmt)){return evaluate_function_definition(stmt,env)}else{if(is_sequence(stmt)){return evaluate_sequence(stmt,env)}else{if(is_application(stmt)){return apply(evaluate(operator(stmt),env),list_of_values(operands(stmt),env))}else{if(is_return_statement(stmt)){return make_return_value(evaluate(return_statement_expression(stmt),env))}else{error(&quot;Unknown expression type - - evaluate: &quot;,stmt)}}}}}}}}}};function user_print(object){if(is_compound_function_value(object)){alert(&quot;Result: function with parameters: &quot;+format(object.parameters)+&quot; body: &quot;+format(object.body))}else{alert(&quot;Result: &quot;+object)}};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function driver_loop(){var input_program=prompt_and_parse();if(is_tagged_object(input_program,&quot;exit&quot;)){return&quot;interpreter completed&quot;}var output=evaluate_toplevel(input_program,the_global_environment);user_print(output);return driver_loop()}&quot;METACIRCULAR EVALUATOR LOADED&quot;;');">// true; 1;</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=//%20true;%201;&amp;hidden=function%20is_tagged_object(stmt,the_tag)%7Breturn%20typeof%20stmt===%22object%22&amp;amp;&amp;amp;stmt.tag===the_tag%7D;function%20is_self_evaluating(stmt)%7Breturn%20stmt===%5B%5D%7C%7Ctypeof%20stmt===%22number%22%7C%7Ctypeof%20stmt===%22string%22%7C%7Ctypeof%20stmt===%22boolean%22%7D;function%20is_variable(stmt)%7Breturn%20is_tagged_object(stmt,%22variable%22)%7Dfunction%20variable_name(stmt)%7Breturn%20stmt.name%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20lookup_variable_value(variable,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Breturn%20first_frame(env)%5Bvariable%5D%7Delse%7Breturn%20env_loop(enclosing_environment(env))%7D%7D%7Dreturn%20env_loop(env)%7D;function%20is_assignment(stmt)%7Breturn%20is_tagged_object(stmt,%22assignment%22)%7Dfunction%20assignment_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20assignment_value(stmt)%7Breturn%20stmt.value%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20set_variable_value(variable,value,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable%20-%20-%20assignment:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Badd_binding_to_frame(variable,value,first_frame(env))%7Delse%7Benv_loop(enclosing_environment(env))%7D%7D%7Denv_loop(env);return%7D;function%20evaluate_assignment(stmt,env)%7Bvar%20value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return%20value%7D;function%20is_var_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22var_definition%22)%7Dfunction%20var_definition_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20var_definition_value(stmt)%7Breturn%20stmt.value%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20define_variable(variable,value,env)%7Bvar%20frame=first_frame(env);return%20add_binding_to_frame(variable,value,frame)%7D;function%20evaluate_var_definition(stmt,env)%7Bdefine_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return%20undefined%7D;function%20is_if_statement(stmt)%7Breturn%20is_tagged_object(stmt,%22if%22)%7Dfunction%20if_predicate(stmt)%7Breturn%20stmt.predicate%7Dfunction%20if_consequent(stmt)%7Breturn%20stmt.consequent%7Dfunction%20if_alternative(stmt)%7Breturn%20stmt.alternative%7D;function%20is_true(x)%7Breturn%20!is_false(x)%7Dfunction%20is_false(x)%7Breturn%20x===false%7C%7Cx===0%7C%7Cx===%22%22%7C%7Cx===undefined%7C%7Cx===NaN%7D;function%20evaluate_if_statement(stmt,env)%7Bif(is_true(evaluate(if_predicate(stmt),env)))%7Breturn%20evaluate(if_consequent(stmt),env)%7Delse%7Breturn%20evaluate(if_alternative(stmt),env)%7D%7D;function%20is_function_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22function_definition%22)%7Dfunction%20function_definition_parameters(stmt)%7Breturn%20stmt.parameters%7Dfunction%20function_definition_body(stmt)%7Breturn%20stmt.body%7D;function%20evaluate_function_definition(stmt,env)%7Breturn%20make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)%7Dfunction%20make_function_value(parameters,body,env)%7Breturn%7Btag:%22function_value%22,parameters:parameters,body:body,environment:env%7D%7Dfunction%20is_compound_function_value(f)%7Breturn%20is_tagged_object(f,%22function_value%22)%7Dfunction%20function_value_parameters(value)%7Breturn%20value.parameters%7Dfunction%20function_value_body(value)%7Breturn%20value.body%7Dfunction%20function_value_environment(value)%7Breturn%20value.environment%7D;function%20is_sequence(stmt)%7Breturn%20is_list(stmt)%7Dfunction%20is_last_statement(stmts)%7Breturn%20is_empty_list(tail(stmts))%7Dfunction%20first_statement(stmts)%7Breturn%20head(stmts)%7Dfunction%20rest_statements(stmts)%7Breturn%20tail(stmts)%7D;function%20evaluate_sequence(stmts,env)%7Bif(is_last_statement(stmts))%7Breturn%20evaluate(first_statement(stmts),env)%7Delse%7Bvar%20first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value))%7Breturn%20first_stmt_value%7Delse%7Breturn%20evaluate_sequence(rest_statements(stmts),env)%7D%7D%7D;function%20is_application(stmt)%7Breturn%20is_tagged_object(stmt,%22application%22)%7Dfunction%20operator(stmt)%7Breturn%20stmt.operator%7Dfunction%20operands(stmt)%7Breturn%20stmt.operands%7Dfunction%20no_operands(ops)%7Breturn%20is_empty_list(ops)%7Dfunction%20first_operand(ops)%7Breturn%20head(ops)%7Dfunction%20rest_operands(ops)%7Breturn%20tail(ops)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_in_underlying_javascript(prim,argument_list)%7Bvar%20argument_array=new%20Array();var%20i=0;while(!is_empty_list(argument_list))%7Bargument_array%5Bi++%5D=head(argument_list);argument_list=tail(argument_list)%7Dreturn%20prim.apply(prim,argument_array)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_primitive_function(fun,argument_list)%7Breturn%20apply_in_underlying_javascript(primitive_implementation(fun),argument_list)%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20extend_environment(vars,vals,base_env)%7Bif(length(vars)===length(vals))%7Breturn%20enclose_by(make_frame(vars,vals),base_env)%7Delse%7Bif(length(vars)" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  <div class="snippet" id="javascript_77_9_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('// 1 + 2;','javascript_77_9','', event,1.0);window.eval('function is_tagged_object(stmt,the_tag){return typeof stmt===&quot;object&quot;&amp;&amp;stmt.tag===the_tag};function is_self_evaluating(stmt){return stmt===[]||typeof stmt===&quot;number&quot;||typeof stmt===&quot;string&quot;||typeof stmt===&quot;boolean&quot;};function is_variable(stmt){return is_tagged_object(stmt,&quot;variable&quot;)}function variable_name(stmt){return stmt.name};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function lookup_variable_value(variable,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){return first_frame(env)[variable]}else{return env_loop(enclosing_environment(env))}}}return env_loop(env)};function is_assignment(stmt){return is_tagged_object(stmt,&quot;assignment&quot;)}function assignment_variable(stmt){return stmt.variable}function assignment_value(stmt){return stmt.value};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function set_variable_value(variable,value,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable - - assignment: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){add_binding_to_frame(variable,value,first_frame(env))}else{env_loop(enclosing_environment(env))}}}env_loop(env);return};function evaluate_assignment(stmt,env){var value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return value};function is_var_definition(stmt){return is_tagged_object(stmt,&quot;var_definition&quot;)}function var_definition_variable(stmt){return stmt.variable}function var_definition_value(stmt){return stmt.value};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function evaluate_var_definition(stmt,env){define_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return undefined};function is_if_statement(stmt){return is_tagged_object(stmt,&quot;if&quot;)}function if_predicate(stmt){return stmt.predicate}function if_consequent(stmt){return stmt.consequent}function if_alternative(stmt){return stmt.alternative};function is_true(x){return !is_false(x)}function is_false(x){return x===false||x===0||x===&quot;&quot;||x===undefined||x===NaN};function evaluate_if_statement(stmt,env){if(is_true(evaluate(if_predicate(stmt),env))){return evaluate(if_consequent(stmt),env)}else{return evaluate(if_alternative(stmt),env)}};function is_function_definition(stmt){return is_tagged_object(stmt,&quot;function_definition&quot;)}function function_definition_parameters(stmt){return stmt.parameters}function function_definition_body(stmt){return stmt.body};function evaluate_function_definition(stmt,env){return make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)}function make_function_value(parameters,body,env){return{tag:&quot;function_value&quot;,parameters:parameters,body:body,environment:env}}function is_compound_function_value(f){return is_tagged_object(f,&quot;function_value&quot;)}function function_value_parameters(value){return value.parameters}function function_value_body(value){return value.body}function function_value_environment(value){return value.environment};function is_sequence(stmt){return is_list(stmt)}function is_last_statement(stmts){return is_empty_list(tail(stmts))}function first_statement(stmts){return head(stmts)}function rest_statements(stmts){return tail(stmts)};function evaluate_sequence(stmts,env){if(is_last_statement(stmts)){return evaluate(first_statement(stmts),env)}else{var first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value)){return first_stmt_value}else{return evaluate_sequence(rest_statements(stmts),env)}}};function is_application(stmt){return is_tagged_object(stmt,&quot;application&quot;)}function operator(stmt){return stmt.operator}function operands(stmt){return stmt.operands}function no_operands(ops){return is_empty_list(ops)}function first_operand(ops){return head(ops)}function rest_operands(ops){return tail(ops)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_in_underlying_javascript(prim,argument_list){var argument_array=new Array();var i=0;while(!is_empty_list(argument_list)){argument_array[i++]=head(argument_list);argument_list=tail(argument_list)}return prim.apply(prim,argument_array)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_primitive_function(fun,argument_list){return apply_in_underlying_javascript(primitive_implementation(fun),argument_list)};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function extend_environment(vars,vals,base_env){if(length(vars)===length(vals)){return enclose_by(make_frame(vars,vals),base_env)}else{if(length(vars)&lt;length(vals)){error(&quot;Too many arguments supplied: &quot;,vars,vals)}else{error(&quot;Too few arguments supplied: &quot;,vars,vals)}}};function is_return_statement(stmt){return is_tagged_object(stmt,&quot;return_statement&quot;)}function return_statement_expression(stmt){return stmt.expression};function make_return_value(content){return{tag:&quot;return_value&quot;,content:content}}function is_return_value(value){return is_tagged_object(value,&quot;return_value&quot;)}function return_value_content(value){return value.content};function apply(fun,arguments){if(is_primitive_function(fun)){return apply_primitive_function(fun,arguments)}else{if(is_compound_function_value(fun)){var result=evaluate(function_value_body(fun),extend_environment(function_value_parameters(fun),arguments,function_value_environment(fun)));if(is_return_value(result)){return return_value_content(result)}else{return undefined}}else{error(&quot;Unknown function type - - APPLY: &quot;,fun)}}};function list_of_values(exps,env){if(no_operands(exps)){return[]}else{return pair(evaluate(first_operand(exps),env),list_of_values(rest_operands(exps),env))}};var primitive_functions={pair:pair,head:head,tail:tail,list:list,is_empty_list:is_empty_list,length:length,display:display,print:print,newline:newline,runtime:runtime,error:error,&quot;+&quot;:function(x,y){return x+y},&quot;-&quot;:function(x,y){return x-y},&quot;*&quot;:function(x,y){return x*y},&quot;/&quot;:function(x,y){return x/y},&quot;%&quot;:function(x,y){return x%y},&quot;===&quot;:function(x,y){return x===y},&quot;!==&quot;:function(x,y){return x!==y},&quot;&lt;&quot;:function(x,y){return x&lt;y},&quot;&lt;=&quot;:function(x,y){return x&lt;=y},&quot;!&quot;:function(x){return !x},&quot;&amp;&amp;&quot;:function(x,y){return x&amp;&amp;y},&quot;||&quot;:function(x,y){return x||y}};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function setup_environment(){var initial_env=enclose_by(an_empty_frame,the_empty_environment);for(var prop in primitive_functions){define_variable(prop,{tag:&quot;primitive&quot;,implementation:primitive_functions[prop]},initial_env)}define_variable(&quot;undefined&quot;,undefined,initial_env);return initial_env};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function evaluate(stmt,env){if(is_self_evaluating(stmt)){return stmt}else{if(is_variable(stmt)){return lookup_variable_value(variable_name(stmt),env)}else{if(is_assignment(stmt)){return evaluate_assignment(stmt,env)}else{if(is_var_definition(stmt)){return evaluate_var_definition(stmt,env)}else{if(is_if_statement(stmt)){return evaluate_if_statement(stmt,env)}else{if(is_function_definition(stmt)){return evaluate_function_definition(stmt,env)}else{if(is_sequence(stmt)){return evaluate_sequence(stmt,env)}else{if(is_application(stmt)){return apply(evaluate(operator(stmt),env),list_of_values(operands(stmt),env))}else{if(is_return_statement(stmt)){return make_return_value(evaluate(return_statement_expression(stmt),env))}else{error(&quot;Unknown expression type - - evaluate: &quot;,stmt)}}}}}}}}}};function user_print(object){if(is_compound_function_value(object)){alert(&quot;Result: function with parameters: &quot;+format(object.parameters)+&quot; body: &quot;+format(object.body))}else{alert(&quot;Result: &quot;+object)}};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function driver_loop(){var input_program=prompt_and_parse();if(is_tagged_object(input_program,&quot;exit&quot;)){return&quot;interpreter completed&quot;}var output=evaluate_toplevel(input_program,the_global_environment);user_print(output);return driver_loop()}&quot;METACIRCULAR EVALUATOR LOADED&quot;;');">// 1 + 2;</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=//%201%20+%202;&amp;hidden=function%20is_tagged_object(stmt,the_tag)%7Breturn%20typeof%20stmt===%22object%22&amp;amp;&amp;amp;stmt.tag===the_tag%7D;function%20is_self_evaluating(stmt)%7Breturn%20stmt===%5B%5D%7C%7Ctypeof%20stmt===%22number%22%7C%7Ctypeof%20stmt===%22string%22%7C%7Ctypeof%20stmt===%22boolean%22%7D;function%20is_variable(stmt)%7Breturn%20is_tagged_object(stmt,%22variable%22)%7Dfunction%20variable_name(stmt)%7Breturn%20stmt.name%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20lookup_variable_value(variable,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Breturn%20first_frame(env)%5Bvariable%5D%7Delse%7Breturn%20env_loop(enclosing_environment(env))%7D%7D%7Dreturn%20env_loop(env)%7D;function%20is_assignment(stmt)%7Breturn%20is_tagged_object(stmt,%22assignment%22)%7Dfunction%20assignment_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20assignment_value(stmt)%7Breturn%20stmt.value%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20set_variable_value(variable,value,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable%20-%20-%20assignment:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Badd_binding_to_frame(variable,value,first_frame(env))%7Delse%7Benv_loop(enclosing_environment(env))%7D%7D%7Denv_loop(env);return%7D;function%20evaluate_assignment(stmt,env)%7Bvar%20value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return%20value%7D;function%20is_var_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22var_definition%22)%7Dfunction%20var_definition_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20var_definition_value(stmt)%7Breturn%20stmt.value%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20define_variable(variable,value,env)%7Bvar%20frame=first_frame(env);return%20add_binding_to_frame(variable,value,frame)%7D;function%20evaluate_var_definition(stmt,env)%7Bdefine_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return%20undefined%7D;function%20is_if_statement(stmt)%7Breturn%20is_tagged_object(stmt,%22if%22)%7Dfunction%20if_predicate(stmt)%7Breturn%20stmt.predicate%7Dfunction%20if_consequent(stmt)%7Breturn%20stmt.consequent%7Dfunction%20if_alternative(stmt)%7Breturn%20stmt.alternative%7D;function%20is_true(x)%7Breturn%20!is_false(x)%7Dfunction%20is_false(x)%7Breturn%20x===false%7C%7Cx===0%7C%7Cx===%22%22%7C%7Cx===undefined%7C%7Cx===NaN%7D;function%20evaluate_if_statement(stmt,env)%7Bif(is_true(evaluate(if_predicate(stmt),env)))%7Breturn%20evaluate(if_consequent(stmt),env)%7Delse%7Breturn%20evaluate(if_alternative(stmt),env)%7D%7D;function%20is_function_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22function_definition%22)%7Dfunction%20function_definition_parameters(stmt)%7Breturn%20stmt.parameters%7Dfunction%20function_definition_body(stmt)%7Breturn%20stmt.body%7D;function%20evaluate_function_definition(stmt,env)%7Breturn%20make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)%7Dfunction%20make_function_value(parameters,body,env)%7Breturn%7Btag:%22function_value%22,parameters:parameters,body:body,environment:env%7D%7Dfunction%20is_compound_function_value(f)%7Breturn%20is_tagged_object(f,%22function_value%22)%7Dfunction%20function_value_parameters(value)%7Breturn%20value.parameters%7Dfunction%20function_value_body(value)%7Breturn%20value.body%7Dfunction%20function_value_environment(value)%7Breturn%20value.environment%7D;function%20is_sequence(stmt)%7Breturn%20is_list(stmt)%7Dfunction%20is_last_statement(stmts)%7Breturn%20is_empty_list(tail(stmts))%7Dfunction%20first_statement(stmts)%7Breturn%20head(stmts)%7Dfunction%20rest_statements(stmts)%7Breturn%20tail(stmts)%7D;function%20evaluate_sequence(stmts,env)%7Bif(is_last_statement(stmts))%7Breturn%20evaluate(first_statement(stmts),env)%7Delse%7Bvar%20first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value))%7Breturn%20first_stmt_value%7Delse%7Breturn%20evaluate_sequence(rest_statements(stmts),env)%7D%7D%7D;function%20is_application(stmt)%7Breturn%20is_tagged_object(stmt,%22application%22)%7Dfunction%20operator(stmt)%7Breturn%20stmt.operator%7Dfunction%20operands(stmt)%7Breturn%20stmt.operands%7Dfunction%20no_operands(ops)%7Breturn%20is_empty_list(ops)%7Dfunction%20first_operand(ops)%7Breturn%20head(ops)%7Dfunction%20rest_operands(ops)%7Breturn%20tail(ops)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_in_underlying_javascript(prim,argument_list)%7Bvar%20argument_array=new%20Array();var%20i=0;while(!is_empty_list(argument_list))%7Bargument_array%5Bi++%5D=head(argument_list);argument_list=tail(argument_list)%7Dreturn%20prim.apply(prim,argument_array)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_primitive_function(fun,argument_list)%7Breturn%20apply_in_underlying_javascript(primitive_implementation(fun),argument_list)%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20extend_environment(vars,vals,base_env)%7Bif(length(vars)===length(vals))%7Breturn%20enclose_by(make_frame(vars,vals),base_env)%7Delse%7Bif(length(vars)" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  <div class="snippet" id="javascript_77_10_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('/* \nfunction append(xs,ys) { \n    if (is_empty_list(xs)) {\n       return y; \n    } else {\n       return pair(head(xs),append(tail(xs),y)); \n    }\n} \nappend(pair(1,[]),pair(2,[]));\n*/','javascript_77_10','', event,1.0);window.eval('function is_tagged_object(stmt,the_tag){return typeof stmt===&quot;object&quot;&amp;&amp;stmt.tag===the_tag};function is_self_evaluating(stmt){return stmt===[]||typeof stmt===&quot;number&quot;||typeof stmt===&quot;string&quot;||typeof stmt===&quot;boolean&quot;};function is_variable(stmt){return is_tagged_object(stmt,&quot;variable&quot;)}function variable_name(stmt){return stmt.name};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function lookup_variable_value(variable,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){return first_frame(env)[variable]}else{return env_loop(enclosing_environment(env))}}}return env_loop(env)};function is_assignment(stmt){return is_tagged_object(stmt,&quot;assignment&quot;)}function assignment_variable(stmt){return stmt.variable}function assignment_value(stmt){return stmt.value};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function set_variable_value(variable,value,env){function env_loop(env){if(is_empty_environment(env)){error(&quot;Unbound variable - - assignment: &quot;,variable)}else{if(has_binding_in_frame(variable,first_frame(env))){add_binding_to_frame(variable,value,first_frame(env))}else{env_loop(enclosing_environment(env))}}}env_loop(env);return};function evaluate_assignment(stmt,env){var value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return value};function is_var_definition(stmt){return is_tagged_object(stmt,&quot;var_definition&quot;)}function var_definition_variable(stmt){return stmt.variable}function var_definition_value(stmt){return stmt.value};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function evaluate_var_definition(stmt,env){define_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return undefined};function is_if_statement(stmt){return is_tagged_object(stmt,&quot;if&quot;)}function if_predicate(stmt){return stmt.predicate}function if_consequent(stmt){return stmt.consequent}function if_alternative(stmt){return stmt.alternative};function is_true(x){return !is_false(x)}function is_false(x){return x===false||x===0||x===&quot;&quot;||x===undefined||x===NaN};function evaluate_if_statement(stmt,env){if(is_true(evaluate(if_predicate(stmt),env))){return evaluate(if_consequent(stmt),env)}else{return evaluate(if_alternative(stmt),env)}};function is_function_definition(stmt){return is_tagged_object(stmt,&quot;function_definition&quot;)}function function_definition_parameters(stmt){return stmt.parameters}function function_definition_body(stmt){return stmt.body};function evaluate_function_definition(stmt,env){return make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)}function make_function_value(parameters,body,env){return{tag:&quot;function_value&quot;,parameters:parameters,body:body,environment:env}}function is_compound_function_value(f){return is_tagged_object(f,&quot;function_value&quot;)}function function_value_parameters(value){return value.parameters}function function_value_body(value){return value.body}function function_value_environment(value){return value.environment};function is_sequence(stmt){return is_list(stmt)}function is_last_statement(stmts){return is_empty_list(tail(stmts))}function first_statement(stmts){return head(stmts)}function rest_statements(stmts){return tail(stmts)};function evaluate_sequence(stmts,env){if(is_last_statement(stmts)){return evaluate(first_statement(stmts),env)}else{var first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value)){return first_stmt_value}else{return evaluate_sequence(rest_statements(stmts),env)}}};function is_application(stmt){return is_tagged_object(stmt,&quot;application&quot;)}function operator(stmt){return stmt.operator}function operands(stmt){return stmt.operands}function no_operands(ops){return is_empty_list(ops)}function first_operand(ops){return head(ops)}function rest_operands(ops){return tail(ops)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_in_underlying_javascript(prim,argument_list){var argument_array=new Array();var i=0;while(!is_empty_list(argument_list)){argument_array[i++]=head(argument_list);argument_list=tail(argument_list)}return prim.apply(prim,argument_array)};function is_primitive_function(fun){return is_tagged_object(fun,&quot;primitive&quot;)}function primitive_implementation(fun){return fun.implementation};function apply_primitive_function(fun,argument_list){return apply_in_underlying_javascript(primitive_implementation(fun),argument_list)};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function extend_environment(vars,vals,base_env){if(length(vars)===length(vals)){return enclose_by(make_frame(vars,vals),base_env)}else{if(length(vars)&lt;length(vals)){error(&quot;Too many arguments supplied: &quot;,vars,vals)}else{error(&quot;Too few arguments supplied: &quot;,vars,vals)}}};function is_return_statement(stmt){return is_tagged_object(stmt,&quot;return_statement&quot;)}function return_statement_expression(stmt){return stmt.expression};function make_return_value(content){return{tag:&quot;return_value&quot;,content:content}}function is_return_value(value){return is_tagged_object(value,&quot;return_value&quot;)}function return_value_content(value){return value.content};function apply(fun,arguments){if(is_primitive_function(fun)){return apply_primitive_function(fun,arguments)}else{if(is_compound_function_value(fun)){var result=evaluate(function_value_body(fun),extend_environment(function_value_parameters(fun),arguments,function_value_environment(fun)));if(is_return_value(result)){return return_value_content(result)}else{return undefined}}else{error(&quot;Unknown function type - - APPLY: &quot;,fun)}}};function list_of_values(exps,env){if(no_operands(exps)){return[]}else{return pair(evaluate(first_operand(exps),env),list_of_values(rest_operands(exps),env))}};var primitive_functions={pair:pair,head:head,tail:tail,list:list,is_empty_list:is_empty_list,length:length,display:display,print:print,newline:newline,runtime:runtime,error:error,&quot;+&quot;:function(x,y){return x+y},&quot;-&quot;:function(x,y){return x-y},&quot;*&quot;:function(x,y){return x*y},&quot;/&quot;:function(x,y){return x/y},&quot;%&quot;:function(x,y){return x%y},&quot;===&quot;:function(x,y){return x===y},&quot;!==&quot;:function(x,y){return x!==y},&quot;&lt;&quot;:function(x,y){return x&lt;y},&quot;&lt;=&quot;:function(x,y){return x&lt;=y},&quot;!&quot;:function(x){return !x},&quot;&amp;&amp;&quot;:function(x,y){return x&amp;&amp;y},&quot;||&quot;:function(x,y){return x||y}};function make_frame(variables,values){if(is_empty_list(variables)&amp;&amp;is_empty_list(values)){return{}}else{var frame=make_frame(tail(variables),tail(values));frame[head(variables)]=head(values);return frame}}function add_binding_to_frame(variable,value,frame){frame[variable]=value;return}function has_binding_in_frame(variable,frame){return frame.hasOwnProperty(variable)};function define_variable(variable,value,env){var frame=first_frame(env);return add_binding_to_frame(variable,value,frame)};function enclosing_environment(env){return tail(env)}function first_frame(env){return head(env)}var the_empty_environment=[];var an_empty_frame={};function is_empty_environment(env){return is_empty_list(env)}function enclose_by(frame,env){return pair(frame,env)};function setup_environment(){var initial_env=enclose_by(an_empty_frame,the_empty_environment);for(var prop in primitive_functions){define_variable(prop,{tag:&quot;primitive&quot;,implementation:primitive_functions[prop]},initial_env)}define_variable(&quot;undefined&quot;,undefined,initial_env);return initial_env};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function evaluate(stmt,env){if(is_self_evaluating(stmt)){return stmt}else{if(is_variable(stmt)){return lookup_variable_value(variable_name(stmt),env)}else{if(is_assignment(stmt)){return evaluate_assignment(stmt,env)}else{if(is_var_definition(stmt)){return evaluate_var_definition(stmt,env)}else{if(is_if_statement(stmt)){return evaluate_if_statement(stmt,env)}else{if(is_function_definition(stmt)){return evaluate_function_definition(stmt,env)}else{if(is_sequence(stmt)){return evaluate_sequence(stmt,env)}else{if(is_application(stmt)){return apply(evaluate(operator(stmt),env),list_of_values(operands(stmt),env))}else{if(is_return_statement(stmt)){return make_return_value(evaluate(return_statement_expression(stmt),env))}else{error(&quot;Unknown expression type - - evaluate: &quot;,stmt)}}}}}}}}}};function user_print(object){if(is_compound_function_value(object)){alert(&quot;Result: function with parameters: &quot;+format(object.parameters)+&quot; body: &quot;+format(object.body))}else{alert(&quot;Result: &quot;+object)}};function evaluate_toplevel(stmt,env){var value=evaluate(stmt,env);if(is_return_value(value)){error(&quot;return not allowed outside of function definition&quot;)}else{return value}}var input_prompt=&quot;/// M-Eval input:&quot;;function prompt_and_parse(){var program_string=prompt(input_prompt);if(program_string===null){return{tag:&quot;exit&quot;}}else{return parser.parse(program_string)}};function driver_loop(){var input_program=prompt_and_parse();if(is_tagged_object(input_program,&quot;exit&quot;)){return&quot;interpreter completed&quot;}var output=evaluate_toplevel(input_program,the_global_environment);user_print(output);return driver_loop()}&quot;METACIRCULAR EVALUATOR LOADED&quot;;');">/* 
+function append(xs,ys) { 
+    if (is_empty_list(xs)) {
+       return y; 
+    } else {
+       return pair(head(xs),append(tail(xs),y)); 
+    }
+} 
+append(pair(1,[]),pair(2,[]));
+*/</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=/*%20%0Afunction%20append(xs,ys)%20%7B%20%0A%20%20%20%20if%20(is_empty_list(xs))%20%7B%0A%20%20%20%20%20%20%20return%20y;%20%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20return%20pair(head(xs),append(tail(xs),y));%20%0A%20%20%20%20%7D%0A%7D%20%0Aappend(pair(1,%5B%5D),pair(2,%5B%5D));%0A*/&amp;hidden=function%20is_tagged_object(stmt,the_tag)%7Breturn%20typeof%20stmt===%22object%22&amp;amp;&amp;amp;stmt.tag===the_tag%7D;function%20is_self_evaluating(stmt)%7Breturn%20stmt===%5B%5D%7C%7Ctypeof%20stmt===%22number%22%7C%7Ctypeof%20stmt===%22string%22%7C%7Ctypeof%20stmt===%22boolean%22%7D;function%20is_variable(stmt)%7Breturn%20is_tagged_object(stmt,%22variable%22)%7Dfunction%20variable_name(stmt)%7Breturn%20stmt.name%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20lookup_variable_value(variable,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Breturn%20first_frame(env)%5Bvariable%5D%7Delse%7Breturn%20env_loop(enclosing_environment(env))%7D%7D%7Dreturn%20env_loop(env)%7D;function%20is_assignment(stmt)%7Breturn%20is_tagged_object(stmt,%22assignment%22)%7Dfunction%20assignment_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20assignment_value(stmt)%7Breturn%20stmt.value%7D;function%20enclosing_environment(env)%7Breturn%20tail(env)%7Dfunction%20first_frame(env)%7Breturn%20head(env)%7Dvar%20the_empty_environment=%5B%5D;var%20an_empty_frame=%7B%7D;function%20is_empty_environment(env)%7Breturn%20is_empty_list(env)%7Dfunction%20enclose_by(frame,env)%7Breturn%20pair(frame,env)%7D;function%20set_variable_value(variable,value,env)%7Bfunction%20env_loop(env)%7Bif(is_empty_environment(env))%7Berror(%22Unbound%20variable%20-%20-%20assignment:%20%22,variable)%7Delse%7Bif(has_binding_in_frame(variable,first_frame(env)))%7Badd_binding_to_frame(variable,value,first_frame(env))%7Delse%7Benv_loop(enclosing_environment(env))%7D%7D%7Denv_loop(env);return%7D;function%20evaluate_assignment(stmt,env)%7Bvar%20value=evaluate(assignment_value(stmt),env);set_variable_value(assignment_variable(stmt),value,env);return%20value%7D;function%20is_var_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22var_definition%22)%7Dfunction%20var_definition_variable(stmt)%7Breturn%20stmt.variable%7Dfunction%20var_definition_value(stmt)%7Breturn%20stmt.value%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20define_variable(variable,value,env)%7Bvar%20frame=first_frame(env);return%20add_binding_to_frame(variable,value,frame)%7D;function%20evaluate_var_definition(stmt,env)%7Bdefine_variable(var_definition_variable(stmt),evaluate(var_definition_value(stmt),env),env);return%20undefined%7D;function%20is_if_statement(stmt)%7Breturn%20is_tagged_object(stmt,%22if%22)%7Dfunction%20if_predicate(stmt)%7Breturn%20stmt.predicate%7Dfunction%20if_consequent(stmt)%7Breturn%20stmt.consequent%7Dfunction%20if_alternative(stmt)%7Breturn%20stmt.alternative%7D;function%20is_true(x)%7Breturn%20!is_false(x)%7Dfunction%20is_false(x)%7Breturn%20x===false%7C%7Cx===0%7C%7Cx===%22%22%7C%7Cx===undefined%7C%7Cx===NaN%7D;function%20evaluate_if_statement(stmt,env)%7Bif(is_true(evaluate(if_predicate(stmt),env)))%7Breturn%20evaluate(if_consequent(stmt),env)%7Delse%7Breturn%20evaluate(if_alternative(stmt),env)%7D%7D;function%20is_function_definition(stmt)%7Breturn%20is_tagged_object(stmt,%22function_definition%22)%7Dfunction%20function_definition_parameters(stmt)%7Breturn%20stmt.parameters%7Dfunction%20function_definition_body(stmt)%7Breturn%20stmt.body%7D;function%20evaluate_function_definition(stmt,env)%7Breturn%20make_function_value(function_definition_parameters(stmt),function_definition_body(stmt),env)%7Dfunction%20make_function_value(parameters,body,env)%7Breturn%7Btag:%22function_value%22,parameters:parameters,body:body,environment:env%7D%7Dfunction%20is_compound_function_value(f)%7Breturn%20is_tagged_object(f,%22function_value%22)%7Dfunction%20function_value_parameters(value)%7Breturn%20value.parameters%7Dfunction%20function_value_body(value)%7Breturn%20value.body%7Dfunction%20function_value_environment(value)%7Breturn%20value.environment%7D;function%20is_sequence(stmt)%7Breturn%20is_list(stmt)%7Dfunction%20is_last_statement(stmts)%7Breturn%20is_empty_list(tail(stmts))%7Dfunction%20first_statement(stmts)%7Breturn%20head(stmts)%7Dfunction%20rest_statements(stmts)%7Breturn%20tail(stmts)%7D;function%20evaluate_sequence(stmts,env)%7Bif(is_last_statement(stmts))%7Breturn%20evaluate(first_statement(stmts),env)%7Delse%7Bvar%20first_stmt_value=evaluate(first_statement(stmts),env);if(is_return_value(first_stmt_value))%7Breturn%20first_stmt_value%7Delse%7Breturn%20evaluate_sequence(rest_statements(stmts),env)%7D%7D%7D;function%20is_application(stmt)%7Breturn%20is_tagged_object(stmt,%22application%22)%7Dfunction%20operator(stmt)%7Breturn%20stmt.operator%7Dfunction%20operands(stmt)%7Breturn%20stmt.operands%7Dfunction%20no_operands(ops)%7Breturn%20is_empty_list(ops)%7Dfunction%20first_operand(ops)%7Breturn%20head(ops)%7Dfunction%20rest_operands(ops)%7Breturn%20tail(ops)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_in_underlying_javascript(prim,argument_list)%7Bvar%20argument_array=new%20Array();var%20i=0;while(!is_empty_list(argument_list))%7Bargument_array%5Bi++%5D=head(argument_list);argument_list=tail(argument_list)%7Dreturn%20prim.apply(prim,argument_array)%7D;function%20is_primitive_function(fun)%7Breturn%20is_tagged_object(fun,%22primitive%22)%7Dfunction%20primitive_implementation(fun)%7Breturn%20fun.implementation%7D;function%20apply_primitive_function(fun,argument_list)%7Breturn%20apply_in_underlying_javascript(primitive_implementation(fun),argument_list)%7D;function%20make_frame(variables,values)%7Bif(is_empty_list(variables)&amp;amp;&amp;amp;is_empty_list(values))%7Breturn%7B%7D%7Delse%7Bvar%20frame=make_frame(tail(variables),tail(values));frame%5Bhead(variables)%5D=head(values);return%20frame%7D%7Dfunction%20add_binding_to_frame(variable,value,frame)%7Bframe%5Bvariable%5D=value;return%7Dfunction%20has_binding_in_frame(variable,frame)%7Breturn%20frame.hasOwnProperty(variable)%7D;function%20extend_environment(vars,vals,base_env)%7Bif(length(vars)===length(vals))%7Breturn%20enclose_by(make_frame(vars,vals),base_env)%7Delse%7Bif(length(vars)" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+      <SPLIT>
+  
+      <EXERCISE>
+  The global environment includes a binding for the symbol <kbd>undefined</kbd>.
+  This way of threating <kbd>undefined</kbd> is consistent with JavaScript's
+  definition; it is a variable and not a keyword in the language as are <kbd>true</kbd>
+  and <kbd>false</kbd>. A disadvantage of this treatment of 
+  <kbd>undefined</kbd> is that it can be redefined as in
+  <div class="snippet" id="javascript_77_11_div"></div>
+<div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('undefined = &quot;defined&quot;;','javascript_77_11','', event,1.0);window.eval('');">undefined = "defined";</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=undefined%20=%20%22defined%22;&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+  Some internet browsers such as Firefox silently prevent the redefinition of 
+  <kbd>undefined</kbd> such that the line above has no
+  effect. Modify the interpreter such that 
+  <kbd>undefined</kbd> can be neither assigned nor
+  re-defined using variable statements. In this implementation, the variable
+  <kbd>undefined</kbd> must always refer to JavaScript's
+  value <kbd>undefined</kbd>.
+  <P></P>
+  The Firefox browser (Version 14) allows the re-definition of the variable
+  <kbd>undefined</kbd> in function definitions, such that
+  <div class="snippet" id="javascript_77_12_div"></div>
+<div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function f(undefined) {\n    return undefined + 1;\n}\nf(2);','javascript_77_12','', event,1.0);window.eval('');">function f(undefined) {
+    return undefined + 1;
+}
+f(2);</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20f(undefined)%20%7B%0A%20%20%20%20return%20undefined%20+%201;%0A%7D%0Af(2);&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+  produces the result 3. Modify your interpreter such that variable statements
+  and assignments cannot change 
+  <kbd>undefined</kbd>, but function definitions can.
+      </EXERCISE>
+  
+      </SPLIT>
+
+
+      <EXERCISE>
+  Eva Lu Ator and Louis Reasoner are each experimenting with the
+  metacircular evaluator.  Eva types in the definition of <kbd>map</kbd>, and
+  runs some test programs that use it.  They work fine.  Louis, in contrast,
+  has installed the system version of <kbd>map</kbd> as a primitive for the
+  metacircular evaluator.  When he tries it, things go terribly
+  wrong.  Explain why Louis's <kbd>map</kbd> fails even though Eva's works.
+  
+      </EXERCISE>
+      
+
+    <hr>
+<div class="footnote">
+<a class="footnote-number" id="footnote-1" href="77.html#footnote-link-1">[1] </a><FOOTNOTE>Any
+    function
+    defined in the underlying JavaScript can be used as
+    a primitive for the metacircular evaluator.  The name of a
+    primitive installed in the evaluator need not be the same as the name
+    of its implementation in the underlying JavaScript; the names are the same
+    here because the metacircular evaluator implements Scheme itself.
+    Thus, for example, we could put 
+    <kbd>first: head,</kbd> 
+    or 
+    <kbd>square: function(x) { return x * x; },</kbd>
+    in the list of 
+    <kbd>primitive_functions</kbd>.</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-2" href="77.html#footnote-link-2">[2] </a><FOOTNOTE>
+        JavaScript's <kbd>apply</kbd> 
+        method expects arguments in an array. Thus, the 
+        <kbd>argument_list</kbd> is transformed into 
+        an array using a <kbd>while</kbd> loop:
+  <div class="snippet" id="javascript_77_13_div"></div>
+<div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('function apply_in_underlying_javascript(prim,argument_list) {\n   var argument_array = new Array();\n   var i = 0;\n   while (!is_empty_list(argument_list)) {\n      argument_array[i++] = head(argument_list);\n      argument_list = tail(argument_list);\n   }\n   return prim.apply(prim,argument_array);\n}','javascript_77_13','', event,1.0);window.eval('');">function apply_in_underlying_javascript(prim,argument_list) {
+   var argument_array = new Array();
+   var i = 0;
+   while (!is_empty_list(argument_list)) {
+      argument_array[i++] = head(argument_list);
+      argument_list = tail(argument_list);
+   }
+   return prim.apply(prim,argument_array);
+}</pre>
+<a href="http://source-ide-new.surge.sh/?snippet=function%20apply_in_underlying_javascript(prim,argument_list)%20%7B%0A%20%20%20var%20argument_array%20=%20new%20Array();%0A%20%20%20var%20i%20=%200;%0A%20%20%20while%20(!is_empty_list(argument_list))%20%7B%0A%20%20%20%20%20%20argument_array%5Bi++%5D%20=%20head(argument_list);%0A%20%20%20%20%20%20argument_list%20=%20tail(argument_list);%0A%20%20%20%7D%0A%20%20%20return%20prim.apply(prim,argument_array);%0A%7D&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+      </FOOTNOTE>
+</div></SUBSECTION></div>
+    </div>
+
+    <div class="nav">
+    <!--
+      <div type="button" class="btn btn-secondary">
+        <a href="http://localhost:3000/chapters/76">&lt; Previous</a>
+    </div>
+    -->
+      <div type="button" class="btn btn-secondary">
+        <a class="scroll-next" href="78.html">Next &gt;</a>
+      </div>
+
+
+  </div>
+  <script>
+//<![CDATA[
+var chapter_id = 77;
+//]]>
+</script>
+  <div class="next-page"></div>
+</div>
+
+     </div><!-- /.container -->
+
+     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+     -->
+   </body>
+</html>
