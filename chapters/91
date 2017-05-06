@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SicpTextbookRails</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="lD0A6rp9bKPuF3zgHWoLdpz/IELuLEr4m3O/0xa+f5Zot1Bjpj5tu0g87tSJvYG8ehdIFNDKLpzaB49pV7pWeA==" />
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../assets/application-4afa0dc75ea8a2ff925eb41df709aa5f5fae6640df639d9b6ae50ed06be5a5d2.css" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon-5cc7f923fb946d60fe9552847f4b6edd0f8cf2f122d6f3fef39d59ce84d47942.ico" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	          crossorigin="anonymous">
+    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script src="../assets/application-e1d34c17f2d1680f21b650089aea08e3ecfe292f1157f2d23bfa7d4d9d530c8b.js"></script>
+
+    <!-- Rendering inline LaTeX -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true,
+          jax: ["input/TeX","output/HTML-CSS"]
+        }
+      });
+    </script>
+    <!--<script src="/mathjax/MathJax.js?config=TeX-AMS_HTML-full.js" type="text/javascript"></script>-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#nav-sidebar" aria-controls="nav-sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+       <a class="navbar-brand navbar-brand-short" href="../chapters">CS1101S: SICP</a>
+       <a class="navbar-brand navbar-brand-long" href="../chapters">CS1101S: Structure and Interpretation
+          of Computer Programs</a>
+
+       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+         <form id="search" class="form-inline my-2 my-lg-0">
+           <input id="search-box" class="form-control mr-sm-2" type="text" placeholder="Search">
+           <div id="search-button" class="btn btn-outline-success my-2 my-sm-0">Search</div>
+
+           <script>
+               (function() {
+                var cx = "002429487986305006822:ztnrbwx01qy";
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+               })();
+            </script>
+            <gcse:search></gcse:search>
+         </form>
+       </div>
+     </nav>
+
+     <div class="container scroll">
+
+          <div class="collapse" id="nav-sidebar" role="tablist" aria-multiselectable="true">
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-122">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-122" aria-expanded="false" aria-controls="sidebar-collapse-122">
+                    <a href="122">About</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-123">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-123" aria-expanded="false" aria-controls="sidebar-collapse-123">
+                    <a href="123">References</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-124">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-124" aria-expanded="false" aria-controls="sidebar-collapse-124">
+                    <a href="124">Webpreface</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-1">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-1" aria-expanded="true" aria-controls="sidebar-collapse-1">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-1" aria-expanded="true" aria-controls="sidebar-collapse-1">
+                    -
+                  </a>
+                    <a href="1">1.       Building Abstractions with       Functions    </a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-1" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-2">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-2" aria-expanded="true" aria-controls="sidebar-collapse-2">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-2" aria-expanded="true" aria-controls="sidebar-collapse-2">
+                    -
+                  </a>
+                    <a href="2">1. The Elements of Programming</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-2" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-3">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-3" aria-expanded="false" aria-controls="sidebar-collapse-3">
+                    <a href="3">1. Expressions</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-4">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-4" aria-expanded="false" aria-controls="sidebar-collapse-4">
+                    <a href="4">2. Naming and the Environment</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-5">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-5" aria-expanded="false" aria-controls="sidebar-collapse-5">
+                    <a href="5">3.           Evaluating          Operator Combinations                  </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-6">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-6" aria-expanded="false" aria-controls="sidebar-collapse-6">
+                    <a href="6">4.           Functions        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-7">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-7" aria-expanded="false" aria-controls="sidebar-collapse-7">
+                    <a href="7">5.           The Substitution Model for                                                 Function                              Application        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-8">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-8" aria-expanded="false" aria-controls="sidebar-collapse-8">
+                    <a href="8">6.           Conditional                                           Statements                              and Predicates        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-9">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-9" aria-expanded="false" aria-controls="sidebar-collapse-9">
+                    <a href="9">7. Example: Square Roots by Newtons Method</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-10">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-2" href="#sidebar-collapse-10" aria-expanded="false" aria-controls="sidebar-collapse-10">
+                    <a href="10">8.                                                 Functions                                as Black-Box Abstractions        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-11">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-11" aria-expanded="true" aria-controls="sidebar-collapse-11">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-11" aria-expanded="true" aria-controls="sidebar-collapse-11">
+                    -
+                  </a>
+                    <a href="11">2.             Functions            and the Processes They Generate      </a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-11" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-12">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-12" aria-expanded="false" aria-controls="sidebar-collapse-12">
+                    <a href="12">1. Linear Recursion and Iteration</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-13">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-13" aria-expanded="false" aria-controls="sidebar-collapse-13">
+                    <a href="13">2. Tree Recursion</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-14">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-14" aria-expanded="false" aria-controls="sidebar-collapse-14">
+                    <a href="14">3. Orders of Growth</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-15">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-15" aria-expanded="false" aria-controls="sidebar-collapse-15">
+                    <a href="15">4. Exponentiation</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-16">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-16" aria-expanded="false" aria-controls="sidebar-collapse-16">
+                    <a href="16">5. Greatest Common Divisors</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-17">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-11" href="#sidebar-collapse-17" aria-expanded="false" aria-controls="sidebar-collapse-17">
+                    <a href="17">6. Example: Testing for Primality</a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-18">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-18" aria-expanded="true" aria-controls="sidebar-collapse-18">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-1" href="#sidebar-collapse-18" aria-expanded="true" aria-controls="sidebar-collapse-18">
+                    -
+                  </a>
+                    <a href="18">3.         Formulating Abstractions with Higher-Order         Functions      </a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-18" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-19">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-19" aria-expanded="false" aria-controls="sidebar-collapse-19">
+                    <a href="19">1.           Functions          as Arguments        </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-20">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-20" aria-expanded="false" aria-controls="sidebar-collapse-20">
+                    <a href="20">2.           Function Definition Expressions          </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-21">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-21" aria-expanded="false" aria-controls="sidebar-collapse-21">
+                    <a href="21">3.             Functions            as General Methods          </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-22">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-18" href="#sidebar-collapse-22" aria-expanded="false" aria-controls="sidebar-collapse-22">
+                    <a href="22">4.               Functions              as Returned Values            </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-23">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-23" aria-expanded="true" aria-controls="sidebar-collapse-23">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-23" aria-expanded="true" aria-controls="sidebar-collapse-23">
+                    -
+                  </a>
+                    <a href="23">2. Building Abstractions with Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-23" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-24">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-24" aria-expanded="true" aria-controls="sidebar-collapse-24">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-24" aria-expanded="true" aria-controls="sidebar-collapse-24">
+                    -
+                  </a>
+                    <a href="24">1. Introduction to Data Abstraction</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-24" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-25">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-25" aria-expanded="false" aria-controls="sidebar-collapse-25">
+                    <a href="25">1.         Example: Arithmetic Operations for Rational Numbers      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-26">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-26" aria-expanded="false" aria-controls="sidebar-collapse-26">
+                    <a href="26">2.         Abstraction Barriers      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-27">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-27" aria-expanded="false" aria-controls="sidebar-collapse-27">
+                    <a href="27">3.         What Is Meant by Data?      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-28">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-24" href="#sidebar-collapse-28" aria-expanded="false" aria-controls="sidebar-collapse-28">
+                    <a href="28">4.         Extended Exercise: Interval Arithmetic      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-29">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-29" aria-expanded="true" aria-controls="sidebar-collapse-29">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-29" aria-expanded="true" aria-controls="sidebar-collapse-29">
+                    -
+                  </a>
+                    <a href="29">2. Hierarchical Data and the Closure Property</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-29" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-30">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-30" aria-expanded="false" aria-controls="sidebar-collapse-30">
+                    <a href="30">1.         Representing Sequences      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-31">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-31" aria-expanded="false" aria-controls="sidebar-collapse-31">
+                    <a href="31">2.         Hierarchical Structures      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-32">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-32" aria-expanded="false" aria-controls="sidebar-collapse-32">
+                    <a href="32">3.         Sequences as Conventional Interfaces      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-33">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-29" href="#sidebar-collapse-33" aria-expanded="false" aria-controls="sidebar-collapse-33">
+                    <a href="33">4.         Example: A Picture Language      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-34">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-34" aria-expanded="true" aria-controls="sidebar-collapse-34">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-34" aria-expanded="true" aria-controls="sidebar-collapse-34">
+                    -
+                  </a>
+                    <a href="34">3. Symbolic Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-34" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-35">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-35" aria-expanded="false" aria-controls="sidebar-collapse-35">
+                    <a href="35">1.         Strings      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-36">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-36" aria-expanded="false" aria-controls="sidebar-collapse-36">
+                    <a href="36">2.         Example: Symbolic Differentiation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-37">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-37" aria-expanded="false" aria-controls="sidebar-collapse-37">
+                    <a href="37">3.         Example: Representing Sets      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-38">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-34" href="#sidebar-collapse-38" aria-expanded="false" aria-controls="sidebar-collapse-38">
+                    <a href="38">4.         Example: Huffman Encoding Trees      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-39">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-39" aria-expanded="true" aria-controls="sidebar-collapse-39">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-39" aria-expanded="true" aria-controls="sidebar-collapse-39">
+                    -
+                  </a>
+                    <a href="39">4. Multiple Representations for Abstract Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-39" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-40">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-39" href="#sidebar-collapse-40" aria-expanded="false" aria-controls="sidebar-collapse-40">
+                    <a href="40">1.         Representations for Complex Numbers      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-41">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-39" href="#sidebar-collapse-41" aria-expanded="false" aria-controls="sidebar-collapse-41">
+                    <a href="41">2.         Tagged data      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-42">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-39" href="#sidebar-collapse-42" aria-expanded="false" aria-controls="sidebar-collapse-42">
+                    <a href="42">3.         Data-Directed Programming and Additivity      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-43">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-43" aria-expanded="true" aria-controls="sidebar-collapse-43">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-23" href="#sidebar-collapse-43" aria-expanded="true" aria-controls="sidebar-collapse-43">
+                    -
+                  </a>
+                    <a href="43">5. Systems with Generic Operations</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-43" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-44">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-43" href="#sidebar-collapse-44" aria-expanded="false" aria-controls="sidebar-collapse-44">
+                    <a href="44">1.         Generic Arithmetic Operations      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-45">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-43" href="#sidebar-collapse-45" aria-expanded="false" aria-controls="sidebar-collapse-45">
+                    <a href="45">2.         Combining Data of Different Types      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-46">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-43" href="#sidebar-collapse-46" aria-expanded="false" aria-controls="sidebar-collapse-46">
+                    <a href="46">3.         Example: Symbolic Algebra      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-47">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-47" aria-expanded="true" aria-controls="sidebar-collapse-47">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-47" aria-expanded="true" aria-controls="sidebar-collapse-47">
+                    -
+                  </a>
+                    <a href="47">3. Modularity, Objects, and State</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-47" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-48">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-48" aria-expanded="true" aria-controls="sidebar-collapse-48">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-48" aria-expanded="true" aria-controls="sidebar-collapse-48">
+                    -
+                  </a>
+                    <a href="48">1. Assignment and Local State</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-48" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-49">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-48" href="#sidebar-collapse-49" aria-expanded="false" aria-controls="sidebar-collapse-49">
+                    <a href="49">1.         Local State Variables      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-50">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-48" href="#sidebar-collapse-50" aria-expanded="false" aria-controls="sidebar-collapse-50">
+                    <a href="50">2.         The Benefits of Introducing Assignment      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-51">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-48" href="#sidebar-collapse-51" aria-expanded="false" aria-controls="sidebar-collapse-51">
+                    <a href="51">3.         The Costs of Introducing Assignment      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-52">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-52" aria-expanded="true" aria-controls="sidebar-collapse-52">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-52" aria-expanded="true" aria-controls="sidebar-collapse-52">
+                    -
+                  </a>
+                    <a href="52">2. The Environment Model of Evaluation</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-52" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-53">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-53" aria-expanded="false" aria-controls="sidebar-collapse-53">
+                    <a href="53">1.         The Rules for Evaluation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-54">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-54" aria-expanded="false" aria-controls="sidebar-collapse-54">
+                    <a href="54">2.         Applying Simple        Functions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-55">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-55" aria-expanded="false" aria-controls="sidebar-collapse-55">
+                    <a href="55">3.         Frames as the Repository of Local State      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-56">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-52" href="#sidebar-collapse-56" aria-expanded="false" aria-controls="sidebar-collapse-56">
+                    <a href="56">4.         Internal Definitions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-57">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-57" aria-expanded="true" aria-controls="sidebar-collapse-57">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-57" aria-expanded="true" aria-controls="sidebar-collapse-57">
+                    -
+                  </a>
+                    <a href="57">3. Modeling with Mutable Data</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-57" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-58">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-58" aria-expanded="false" aria-controls="sidebar-collapse-58">
+                    <a href="58">1.         Mutable List Structure      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-59">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-59" aria-expanded="false" aria-controls="sidebar-collapse-59">
+                    <a href="59">2.         Representing Queues      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-60">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-60" aria-expanded="false" aria-controls="sidebar-collapse-60">
+                    <a href="60">3.         Representing Tables      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-61">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-61" aria-expanded="false" aria-controls="sidebar-collapse-61">
+                    <a href="61">4.         A Simulator for Digital Circuits      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-62">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-57" href="#sidebar-collapse-62" aria-expanded="false" aria-controls="sidebar-collapse-62">
+                    <a href="62">5.         Propagation of Constraints      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-63">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-63" aria-expanded="true" aria-controls="sidebar-collapse-63">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-63" aria-expanded="true" aria-controls="sidebar-collapse-63">
+                    -
+                  </a>
+                    <a href="63">4. Concurrency: Time Is of the Essence</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-63" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-64">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-63" href="#sidebar-collapse-64" aria-expanded="false" aria-controls="sidebar-collapse-64">
+                    <a href="64">1.         The Nature of Time in Concurrent Systems      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-65">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-63" href="#sidebar-collapse-65" aria-expanded="false" aria-controls="sidebar-collapse-65">
+                    <a href="65">2.         Mechanisms for Controlling Concurrency      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-66">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-66" aria-expanded="true" aria-controls="sidebar-collapse-66">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-47" href="#sidebar-collapse-66" aria-expanded="true" aria-controls="sidebar-collapse-66">
+                    -
+                  </a>
+                    <a href="66">5. Streams</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-66" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-67">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-67" aria-expanded="false" aria-controls="sidebar-collapse-67">
+                    <a href="67">1.         Streams Are Delayed Lists      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-68">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-68" aria-expanded="false" aria-controls="sidebar-collapse-68">
+                    <a href="68">2.         Infinite Streams      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-69">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-69" aria-expanded="false" aria-controls="sidebar-collapse-69">
+                    <a href="69">3.   Exploiting the Stream Paradigm      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-70">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-70" aria-expanded="false" aria-controls="sidebar-collapse-70">
+                    <a href="70">4.   Streams and Delayed Evaluation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-71">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-66" href="#sidebar-collapse-71" aria-expanded="false" aria-controls="sidebar-collapse-71">
+                    <a href="71">5.   Modularity of Functional Programs and Modularity of Objects      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-72">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-72" aria-expanded="true" aria-controls="sidebar-collapse-72">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-72" aria-expanded="true" aria-controls="sidebar-collapse-72">
+                    -
+                  </a>
+                    <a href="72">4. Metalinguistic Abstraction</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-72" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-73">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-73" aria-expanded="true" aria-controls="sidebar-collapse-73">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-73" aria-expanded="true" aria-controls="sidebar-collapse-73">
+                    -
+                  </a>
+                    <a href="73">1. The Metacircular Evaluator</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-73" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-74">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-74" aria-expanded="false" aria-controls="sidebar-collapse-74">
+                    <a href="74">1.   The Core of the Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-75">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-75" aria-expanded="false" aria-controls="sidebar-collapse-75">
+                    <a href="75">2.   Representing Statements and Expressions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-76">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-76" aria-expanded="false" aria-controls="sidebar-collapse-76">
+                    <a href="76">3.   Evaluator Data Structures      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-77">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-77" aria-expanded="false" aria-controls="sidebar-collapse-77">
+                    <a href="77">4.   Running the Evaluator as a Program      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-78">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-78" aria-expanded="false" aria-controls="sidebar-collapse-78">
+                    <a href="78">5.   Data as Programs      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-79">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-79" aria-expanded="false" aria-controls="sidebar-collapse-79">
+                    <a href="79">6.   Internal Definitions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-80">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-73" href="#sidebar-collapse-80" aria-expanded="false" aria-controls="sidebar-collapse-80">
+                    <a href="80">7.   Separating Syntactic Analysis from Execution      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-81">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-81" aria-expanded="true" aria-controls="sidebar-collapse-81">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-81" aria-expanded="true" aria-controls="sidebar-collapse-81">
+                    -
+                  </a>
+                    <a href="81">2. Variations on a SchemeLazy Evaluation</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-81" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-82">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-81" href="#sidebar-collapse-82" aria-expanded="false" aria-controls="sidebar-collapse-82">
+                    <a href="82">1.   Normal Order and Applicative Order      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-83">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-81" href="#sidebar-collapse-83" aria-expanded="false" aria-controls="sidebar-collapse-83">
+                    <a href="83">2.   An Interpreter with Lazy Evaluation      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-84">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-81" href="#sidebar-collapse-84" aria-expanded="false" aria-controls="sidebar-collapse-84">
+                    <a href="84">3.   Streams as Lazy Lists      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-85">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-85" aria-expanded="true" aria-controls="sidebar-collapse-85">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-85" aria-expanded="true" aria-controls="sidebar-collapse-85">
+                    -
+                  </a>
+                    <a href="85">3. Variations on a SchemeNondeterministic Computing</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-85" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-86">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-85" href="#sidebar-collapse-86" aria-expanded="false" aria-controls="sidebar-collapse-86">
+                    <a href="86">1.   Amb and Search      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-87">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-85" href="#sidebar-collapse-87" aria-expanded="false" aria-controls="sidebar-collapse-87">
+                    <a href="87">2.   Examples of Nondeterministic Programs      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-88">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-85" href="#sidebar-collapse-88" aria-expanded="false" aria-controls="sidebar-collapse-88">
+                    <a href="88">3.   Implementing the Amb Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-89">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-89" aria-expanded="true" aria-controls="sidebar-collapse-89">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-72" href="#sidebar-collapse-89" aria-expanded="true" aria-controls="sidebar-collapse-89">
+                    -
+                  </a>
+                    <a href="89">4. Logic Programming</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-89" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-90">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-90" aria-expanded="false" aria-controls="sidebar-collapse-90">
+                    <a href="90">1.   Deductive Information Retrieval      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-91">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-91" aria-expanded="false" aria-controls="sidebar-collapse-91">
+                    <a href="91">2.   How the Query System Works      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-92">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-92" aria-expanded="false" aria-controls="sidebar-collapse-92">
+                    <a href="92">3.   Is Logic Programming Mathematical Logic?      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-93">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-89" href="#sidebar-collapse-93" aria-expanded="false" aria-controls="sidebar-collapse-93">
+                    <a href="93">4.   Implementing the Query System      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                             <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-94">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-94" aria-expanded="true" aria-controls="sidebar-collapse-94">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#nav-sidebar" href="#sidebar-collapse-94" aria-expanded="true" aria-controls="sidebar-collapse-94">
+                    -
+                  </a>
+                    <a href="94">5. Computing with Register Machines</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-94" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-95">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-95" aria-expanded="true" aria-controls="sidebar-collapse-95">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-95" aria-expanded="true" aria-controls="sidebar-collapse-95">
+                    -
+                  </a>
+                    <a href="95">1. Designing Register Machines</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-95" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-96">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-96" aria-expanded="false" aria-controls="sidebar-collapse-96">
+                    <a href="96">1.   A Language for Describing Register Machines      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-97">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-97" aria-expanded="false" aria-controls="sidebar-collapse-97">
+                    <a href="97">2.   Abstraction in Machine Design      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-98">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-98" aria-expanded="false" aria-controls="sidebar-collapse-98">
+                    <a href="98">3.   Subroutines      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-99">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-99" aria-expanded="false" aria-controls="sidebar-collapse-99">
+                    <a href="99">4.   Using a Stack to Implement Recursion      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-100">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-95" href="#sidebar-collapse-100" aria-expanded="false" aria-controls="sidebar-collapse-100">
+                    <a href="100">5.   Instruction Summary      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-101">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-101" aria-expanded="true" aria-controls="sidebar-collapse-101">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-101" aria-expanded="true" aria-controls="sidebar-collapse-101">
+                    -
+                  </a>
+                    <a href="101">2. A Register-Machine Simulator</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-101" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-102">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-102" aria-expanded="false" aria-controls="sidebar-collapse-102">
+                    <a href="102">1.   The Machine Model      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-103">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-103" aria-expanded="false" aria-controls="sidebar-collapse-103">
+                    <a href="103">2.   The Assembler      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-104">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-104" aria-expanded="false" aria-controls="sidebar-collapse-104">
+                    <a href="104">3.   Generating Execution  Functions  for Instructions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-105">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-101" href="#sidebar-collapse-105" aria-expanded="false" aria-controls="sidebar-collapse-105">
+                    <a href="105">4.   Monitoring Machine Performance      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-106">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-106" aria-expanded="true" aria-controls="sidebar-collapse-106">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-106" aria-expanded="true" aria-controls="sidebar-collapse-106">
+                    -
+                  </a>
+                    <a href="106">3. Storage Allocation and Garbage Collection</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-106" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-107">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-106" href="#sidebar-collapse-107" aria-expanded="false" aria-controls="sidebar-collapse-107">
+                    <a href="107">1.   Memory as Vectors      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-108">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-106" href="#sidebar-collapse-108" aria-expanded="false" aria-controls="sidebar-collapse-108">
+                    <a href="108">2.   Maintaining the Illusion of Infinite Memory      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-109">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-109" aria-expanded="true" aria-controls="sidebar-collapse-109">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-109" aria-expanded="true" aria-controls="sidebar-collapse-109">
+                    -
+                  </a>
+                    <a href="109">4. The Explicit-Control Evaluator</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-109" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-110">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-110" aria-expanded="false" aria-controls="sidebar-collapse-110">
+                    <a href="110">1.   The Core of the Explicit-Control Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-111">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-111" aria-expanded="false" aria-controls="sidebar-collapse-111">
+                    <a href="111">2.   Sequence Evaluation and Tail Recursion      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-112">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-112" aria-expanded="false" aria-controls="sidebar-collapse-112">
+                    <a href="112">3.   Conditionals, Assignments, and Definitions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-113">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-109" href="#sidebar-collapse-113" aria-expanded="false" aria-controls="sidebar-collapse-113">
+                    <a href="113">4.   Running the Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-114">
+                <h5 class="mb-0">
+                  <a class="sidebar-show collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-114" aria-expanded="true" aria-controls="sidebar-collapse-114">
+                    +
+                  </a>
+                  <a class="sidebar-hide collapsed" data-toggle="collapse" data-parent="#sidebar-94" href="#sidebar-collapse-114" aria-expanded="true" aria-controls="sidebar-collapse-114">
+                    -
+                  </a>
+                    <a href="114">5. Compilation</a>
+                </h5>
+              </div>
+              <div id="sidebar-collapse-114" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                                <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-115">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-115" aria-expanded="false" aria-controls="sidebar-collapse-115">
+                    <a href="115">1.   Structure of the Compiler      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-116">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-116" aria-expanded="false" aria-controls="sidebar-collapse-116">
+                    <a href="116">2.   Compiling Expressions      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-117">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-117" aria-expanded="false" aria-controls="sidebar-collapse-117">
+                    <a href="117">3.   Compiling Combinations      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-118">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-118" aria-expanded="false" aria-controls="sidebar-collapse-118">
+                    <a href="118">4.   Combining Instruction Sequences      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-119">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-119" aria-expanded="false" aria-controls="sidebar-collapse-119">
+                    <a href="119">5.   An Example of Compiled Code      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-120">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-120" aria-expanded="false" aria-controls="sidebar-collapse-120">
+                    <a href="120">6.   Lexical Addressing      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <div class="card card-inverse">
+              <div class="card-header" role="tab" id="sidebar-121">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-114" href="#sidebar-collapse-121" aria-expanded="false" aria-controls="sidebar-collapse-121">
+                    <a href="121">7.   Interfacing Compiled Code to the Evaluator      </a>
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+           <div class="chapter-content">
+    <div class="chapter-title">
+        4.4.2.
+  How the Query System Works
+      
+    </div>
+    <div class="chapter-text" >
+        <div class="SUBSECTION"><SUBSECTION>
+      
+
+      
+      
+
+      <p>
+  In Section <REF NAME="sec:implementing-the-query-system"></REF> we will present an
+  implementation of the query interpreter as a collection of
+  functions.
+  In this section we give an overview that explains the general
+  structure of the system independent of low-level implementation
+  details.  After describing the implementation of the interpreter, we
+  will be in a position to understand some of its limitations and some
+  of the subtle ways in which the query language's logical operations
+  differ from the operations of mathematical logic.
+      </p>
+
+      <p>
+  It should be apparent that the query evaluator must perform some kind
+  of search in order to match queries against facts and rules in the
+  data base.  One way to do this would be to implement the query system
+  as a nondeterministic program, using the <kbd>amb</kbd> evaluator of
+  Section <REF NAME="sec:nondeterministic-evaluation"></REF> (see
+  Exercise <REF NAME="ex:query-lang-amb"></REF>).  Another possibility is to manage
+  the search with the aid of streams.  Our implementation follows this
+  second approach.
+      </p>
+
+      <p>
+  The query system is organized around two central operations called
+  <EM>pattern matching</EM> and <EM>unification</EM>.  We first describe
+  pattern matching and explain how this operation, together with the
+  organization of information in terms of streams of frames, enables us
+  to implement both simple and compound queries.  We next discuss
+  unification, a generalization of pattern matching needed to implement
+  rules.  Finally, we show how the entire query interpreter fits
+  together through a
+  function
+  that classifies expressions in a manner
+  analogous to the way <kbd>eval</kbd> classifies expressions for the
+  interpreter described in Section <REF NAME="sec:mc-eval"></REF>.
+      </p>
+
+      <h2>
+  Pattern matching
+      </h2>
+
+      
+      
+      <p>
+  A <EM>pattern matcher</EM> is a program that tests whether some datum
+  fits a specified pattern.  For example, the data list <kbd>???</kbd> matches the pattern <kbd>???</kbd> with the pattern variable
+  <kbd>?x</kbd> bound to <kbd>???</kbd>.  The same data list matches the pattern
+  <kbd>???</kbd> with <kbd>?x</kbd> and <kbd>?z</kbd> both bound to <kbd>???</kbd>
+  and <kbd>?y</kbd> bound to <kbd>c</kbd>.  It also matches the pattern <kbd>???</kbd> with <kbd>?x</kbd> bound to <kbd>a</kbd> and <kbd>?y</kbd> bound
+  to <kbd>b</kbd>.  However, it does not match the pattern <kbd>???</kbd>,
+  since that pattern specifies a list whose second element is the symbol
+  <kbd>a</kbd>.
+      </p>
+
+      <p>
+  
+  
+  The pattern matcher used by the query system takes as inputs a
+  pattern, a datum, and a <EM>frame</EM> that specifies bindings for
+  various pattern variables.  It checks whether the datum matches the
+  pattern in a way that is consistent with the bindings already in the
+  frame.  If so, it returns the given frame augmented by any bindings
+  that may have been determined by the match.  Otherwise, it indicates
+  that the match has failed.
+      </p>
+
+      <p>
+  For example, using the pattern <kbd>???</kbd> to match <kbd>???</kbd>
+  given an empty frame will return a frame specifying that <kbd>?x</kbd> is
+  bound to <kbd>a</kbd> and <kbd>?y</kbd> is bound to <kbd>b</kbd>.  Trying the match
+  with the same pattern, the same datum, and a frame specifying that
+  <kbd>?y</kbd> is bound to <kbd>a</kbd> will fail.  Trying the match with the
+  same pattern, the same datum, and a frame in which <kbd>?y</kbd> is bound
+  to <kbd>b</kbd> and <kbd>?x</kbd> is unbound will return the given frame
+  augmented by a binding of <kbd>?x</kbd> to <kbd>a</kbd>.
+      </p>
+
+      <p>
+  
+  The pattern matcher is all the mechanism that is needed to process
+  simple queries that don't involve rules.  For instance, to process the
+  query
+
+  <div class="snippet" id="javascript_91_0_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_0','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  we scan through all assertions in the data base and select those that
+  match the pattern with respect to an initially empty frame.  For each
+  match we find, we use the frame returned by the match to instantiate
+  the pattern with a value for <kbd>?x</kbd>.
+  
+  
+      </p>
+
+      <h2>
+  Streams of frames
+      </h2>
+
+      
+      
+      <p>
+  The testing of patterns against frames is organized through the use of
+  streams.  Given a single frame, the matching process runs through the
+  data-base entries one by one.  For each data-base entry, the matcher
+  generates either a special symbol indicating that the match has failed
+  or an extension to the frame.  The results for all the data-base
+  entries are collected into a stream, which is passed through a filter
+  to weed out the failures.  The result is a stream of all the frames
+  that extend the given frame via a match to some assertion in the data
+  base.<a class="superscript" id="footnote-link-1" href="91#footnote-1">[1]</a>
+      </p>
+
+      <p>
+  In our system, a query takes an input stream of frames and performs
+  the above matching operation for every frame in the stream, as
+  indicated in Figure <REF NAME="fig:query-stream"></REF>.  That is, for each frame in
+  the input stream, the query generates a new stream consisting of all
+  extensions to that frame by matches to assertions in the data base.
+  All these streams are then combined to form one huge stream, which
+  contains all possible extensions of every frame in the input stream.
+  This stream is the output of the query.
+
+  \begin{figure}
+  \epsffile{/zu/hal/sicp/chapter-4/figs/query-stream.eps}
+  \figcaption {A query processes a stream of frames.}
+  
+  \end{figure}
+      </p>
+
+      <p>
+  
+  To answer a simple query, we use the query with an input stream
+  consisting of a single empty frame.  The resulting output stream
+  contains all extensions to the empty frame (that is, all answers to
+  our query).  This stream of frames is then used to generate a stream
+  of copies of the original query pattern with the variables
+  instantiated by the values in each frame, and this is the stream that
+  is finally printed.
+      </p>
+
+      <h2>
+  Compound queries
+      </h2>
+
+      
+      <p>
+  The real elegance of the stream-of-frames implementation is evident
+  when we deal with compound queries.  The processing of compound
+  queries makes use of the ability of our matcher to demand that a match
+  
+  be consistent with a specified frame.  For example, to handle the <kbd>and</kbd> of two queries, such as
+
+  <div class="snippet" id="javascript_91_1_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_1','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  (informally, <QUOTE>Find all people who can do the job of a computer
+    programmer trainee</QUOTE>), we first find all entries that match the
+  pattern
+
+  <div class="snippet" id="javascript_91_2_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_2','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+      <p>
+  This produces a stream of frames, each of which contains a binding for
+  <kbd>?x</kbd>.  Then for each frame in the stream we find all entries that
+  match
+
+  <div class="snippet" id="javascript_91_3_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_3','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  in a way that is consistent with the given binding for <kbd>?x</kbd>.  Each
+  such match will produce a frame containing bindings for <kbd>?x</kbd> and
+  <kbd>?person</kbd>.  The <kbd>and</kbd> of two queries can be viewed as a series
+  combination of the two component queries, as shown in
+  figure <REF NAME="fig:query-and"></REF>.  The frames that pass through the first
+  query filter are filtered and further extended by the second query.
+
+  \begin{figure}
+  \epsffile{/zu/hal/sicp/chapter-4/figs/query-and.eps}
+  \figcaption {The <kbd>and</kbd> combination of two queries is
+  produced by operating on the stream of frames in series.}
+  
+  \end{figure}
+      </p>
+
+      <p>
+  
+  Figure <REF NAME="fig:query-or"></REF> shows the analogous method for computing the
+  <kbd>or</kbd> of two queries as a parallel combination of the two component
+  queries.  The input stream of frames is extended separately by each
+  query.  The two resulting streams are then merged to produce the final
+  output stream.
+
+  \begin{figure}
+  \epsffile{/zu/hal/sicp/chapter-4/figs/query-or.eps}
+  \figcaption {The <kbd>or</kbd> combination of two queries is produced by 
+  operating on the stream of frames in parallel and merging the
+  results.}
+  
+  \end{figure}
+      </p>
+
+      <p>
+  
+  Even from this high-level description, it is apparent that the
+  processing of compound queries can be slow.
+  For example, since a query may produce more than one output frame for
+  each input frame, and each query in an <kbd>and</kbd> gets its input frames
+  from the previous query, an <kbd>and</kbd> query could, in the worst case,
+  have to perform a number of matches that is exponential in the number
+  of queries (see 
+  Exercise <REF NAME="ex:q-exponential-and"></REF>).<a class="superscript" id="footnote-link-2" href="91#footnote-2">[2]</a>
+  Though systems for handling only simple queries are quite practical,
+  dealing with complex queries is extremely 
+  difficult.<a class="superscript" id="footnote-link-3" href="91#footnote-3">[3]</a>
+      </p>
+
+      <p>
+  
+  From the stream-of-frames viewpoint, the <kbd>not</kbd> of some query acts
+  as a filter that removes all frames for which the query can be
+  satisfied.  For instance, given the pattern
+
+  <div class="snippet" id="javascript_91_4_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_4','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  we attempt, for each frame in the input stream, to produce extension
+  frames that satisfy <kbd>???</kbd>.  We remove
+  from the input stream all frames for which such extensions exist.  The
+  result is a stream consisting of only those frames in which the
+  binding for <kbd>?x</kbd> does not satisfy <kbd>???</kbd>.  For example, in processing the query
+
+  <div class="snippet" id="javascript_91_5_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_5','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  the first clause will generate frames with bindings for <kbd>?x</kbd> and
+  <kbd>?y</kbd>.  The <kbd>not</kbd> clause will then filter
+  these by removing all frames in which the binding for <kbd>?x</kbd>
+  satisfies the restriction that <kbd>?x</kbd> is a computer
+  programmer.<a class="superscript" id="footnote-link-4" href="91#footnote-4">[4]</a>
+      </p>
+
+      <p>
+  
+  The <kbd>lisp-value</kbd> special form is implemented as a similar filter
+  on frame streams.  We use each frame in the stream to instantiate any
+  variables in the pattern, then apply the JavaScript predicate.  We remove
+  from the input stream all frames for which the predicate fails.
+  
+      </p>
+
+      <h2>
+  Unification
+      </h2>
+
+      
+      
+      <p>
+  In order to handle rules in the query language, we must be able to
+  find the rules whose conclusions match a given query pattern.  Rule
+  conclusions are like assertions except that they can contain
+  variables, so we will need a generalization of pattern
+  matching—called <EM>unification</EM>—in which both the <QUOTE>pattern</QUOTE>
+  and the <QUOTE>datum</QUOTE> may contain variables.
+      </p>
+
+      <p>
+  A unifier takes two patterns, each containing constants and variables,
+  and determines whether it is possible to assign values to the
+  variables that will make the two patterns equal.  If so, it returns a
+  frame containing these bindings.  For example, unifying <kbd>???</kbd> and <kbd>???</kbd> will specify a frame in which <kbd>?x</kbd>, $\
+    $<kbd>?y</kbd>, and <kbd>?z</kbd> must all be bound to <kbd>a</kbd>.  On the other
+  hand, unifying <kbd>???</kbd> and <kbd>???</kbd> will fail, because
+  there is no value for <kbd>?y</kbd> that can make the two patterns equal.
+  (For the second elements of the patterns to be equal, <kbd>?y</kbd> would
+  have to be <kbd>b</kbd>; however, for the third elements to be equal, <kbd>?y</kbd> would have to be <kbd>a</kbd>.)  The unifier used in the query system,
+  like the pattern matcher, takes a frame as input and performs
+  unifications that are consistent with this frame.
+      </p>
+
+      <p>
+  The unification algorithm is the most technically difficult part of
+  the query system.  With complex patterns, performing unification may
+  seem to require deduction.  To unify <kbd>???</kbd> and <kbd>???</kbd>, for example, the algorithm must infer that <kbd>?x</kbd> should
+  be <kbd>???</kbd>, $\, $<kbd>?y</kbd> should be <kbd>b</kbd>, and <kbd>?z</kbd> should
+  be <kbd>c</kbd>.  We may think of this process as solving a set of
+  equations among the pattern components.  In general, these are
+  simultaneous equations, which may require substantial manipulation to
+  solve.<a class="superscript" id="footnote-link-5" href="91#footnote-5">[5]</a>  For example, unifying <kbd>???</kbd> and <kbd>???</kbd> may be thought of as specifying the
+  simultaneous equations
+
+  <div class="snippet" id="javascript_91_6_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_6','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+      <p>
+  These equations imply that
+
+  <div class="snippet" id="javascript_91_7_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_7','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  which in turn implies that
+
+  <div class="snippet" id="javascript_91_8_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_8','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  and hence that
+
+  <div class="snippet" id="javascript_91_9_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_9','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+      <p>
+  
+  
+  In a successful pattern match, all pattern variables become bound, and
+  the values to which they are bound contain only constants.  This is
+  also true of all the examples of unification we have seen so far.  In
+  general, however, a successful unification may not completely
+  determine the variable values; some variables may remain unbound and
+  others may be bound to values that contain variables.
+      </p>
+
+      <p>
+  Consider the unification of <kbd>???</kbd> and <kbd>???</kbd>.  We
+  can deduce that <kbd>?x $=$ (b ?y)</kbd> and <kbd>a $=$ ?z</kbd>, but we cannot
+  further solve for <kbd>?x</kbd> or <kbd>?y</kbd>.  The unification doesn't fail,
+  since it is certainly possible to make the two patterns equal by
+  assigning values to <kbd>?x</kbd> and <kbd>?y</kbd>.  Since this match in no way
+  restricts the values <kbd>?y</kbd> can take on, no binding for <kbd>?y</kbd> is
+  put into the result frame.  The match does, however, restrict the
+  value of <kbd>?x</kbd>.  Whatever value <kbd>?y</kbd> has, <kbd>?x</kbd> must be <kbd>???</kbd>.  A binding of <kbd>?x</kbd> to the pattern <kbd>???</kbd> is thus
+  put into the frame.  If a value for <kbd>?y</kbd> is later determined and
+  added to the frame (by a pattern match or unification that is required
+  to be consistent with this frame), the previously bound <kbd>?x</kbd> will
+  refer to this value.<a class="superscript" id="footnote-link-6" href="91#footnote-6">[6]</a>
+  
+  
+      </p>
+
+      <h2>
+  Applying rules
+      </h2>
+
+      
+      <p>
+  Unification is the key to the component of the query system that makes
+  inferences from rules. To see how this is accomplished, consider
+  processing a query that involves applying a rule, such as
+
+  <div class="snippet" id="javascript_91_10_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_10','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+      </p>
+
+      <p>
+  To process this query, we first use the ordinary pattern-match
+  function
+  described above to see if there are any assertions in the
+  data base that match this pattern.  (There will not be any in this
+  case, since our data base includes no direct assertions about who
+  lives near whom.)  The next step is to attempt to unify the query
+  pattern with the conclusion of each rule.  We find that the pattern
+  unifies with the conclusion of the rule
+
+  <div class="snippet" id="javascript_91_11_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_11','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+
+  resulting in a frame specifying that <kbd>?person-2</kbd> is bound
+  to <kbd>???</kbd> and that <kbd>?x</kbd> should be bound to (have
+  the same value as) <kbd>?person-1</kbd>.  Now, relative to this frame, we
+  evaluate the compound query given by the body of the rule.  Successful
+  matches will extend this frame by providing a binding for <kbd>?person-1</kbd>, and consequently a value for <kbd>?x</kbd>, which we can use to
+  instantiate the original query pattern.
+      </p>
+
+      <p>
+  In general, the query evaluator uses the following method to apply a
+  rule when trying to establish a query pattern in a frame that
+  specifies bindings for some of the pattern variables:
+
+  <UL>
+    <LI>Unify the query with the conclusion of the rule to form, if
+      successful, an extension of the original frame.
+
+    </LI>
+    <LI>Relative to the extended frame, evaluate the query formed by
+      the body of the rule.
+    </LI>
+
+  </UL>
+      </p>
+
+      <p>
+  
+  Notice how similar this is to the method for applying a
+  function
+  in
+  the <kbd>eval</kbd>/<kbd>apply</kbd> evaluator for JavaScript:
+  <UL>
+
+    <LI>Bind the
+      function's parameters to its arguments to form a
+      frame that extends the original
+      function
+      environment.
+
+    </LI>
+    <LI>Relative to the extended environment, evaluate the expression
+      formed by the body of the
+      function.
+    </LI>
+
+  </UL>
+      </p>
+
+      <p>
+  The similarity between the two evaluators should come as no surprise.
+  Just as
+  function
+  definitions are the means of abstraction in JavaScript,
+  rule definitions are the means of abstraction in the query language.
+  In each case, we unwind the abstraction by creating appropriate
+  bindings and evaluating the rule or
+  function
+  body relative to these.
+  
+      </p>
+
+      <h2>
+  Simple queries
+      </h2>
+
+      
+      <p>
+  We saw earlier in this section how to evaluate simple queries in the
+  absence of rules.  Now that we have seen how to apply rules, we can
+  describe how to evaluate simple queries by using both rules and
+  assertions.
+      </p>
+
+      <p>
+  Given the query pattern and a stream of frames, we produce, for each
+  frame in the input stream, two streams:
+
+  <UL>
+    <LI>a stream of extended frames obtained by matching the pattern
+      against all assertions in the data base (using the pattern matcher),
+      and
+
+    </LI>
+    <LI>a stream of extended frames obtained by applying all
+      possible rules (using the unifier).<a class="superscript" id="footnote-link-7" href="91#footnote-7">[7]</a>
+    </LI>
+
+  </UL>
+      </p>
+
+      <p>
+  Appending these two streams produces a stream that consists of all the
+  ways that the given pattern can be satisfied consistent with the
+  original frame.  These streams (one for each frame in the input
+  stream) are now all combined to form one large stream, which therefore
+  consists of all the ways that any of the frames in the original input
+  stream can be extended to produce a match with the given pattern.
+  
+      </p>
+
+      <h2>
+  The query evaluator and the driver loop
+      </h2>
+
+      
+      <p>
+  Despite the complexity of the underlying matching operations, the
+  system is organized much like an evaluator for any language.  The
+  function
+  that coordinates the matching operations is called 
+  
+  
+  <kbd>qeval</kbd>, and it plays a role analogous to that of the <kbd>eval</kbd>
+  function
+  for JavaScript.  <kbd>Qeval</kbd> takes as inputs a query and a stream
+  of frames.  Its output is a stream of frames, corresponding to
+  successful matches to the query pattern, that extend some frame in the
+  input stream, as indicated in Figure <REF NAME="fig:query-stream"></REF>.  Like
+  <kbd>eval</kbd>, <kbd>qeval</kbd> classifies the different types of expressions
+  (queries) and dispatches to an appropriate
+  function
+  for each.  There
+  is a
+  function
+  for each special form (<kbd>and</kbd>, <kbd>or</kbd>, <kbd>not</kbd>,
+  and <kbd>lisp-value</kbd>) and one for simple queries.
+      </p>
+
+      <p>
+  
+  
+  The driver loop, which is analogous to the <kbd>driver-loop</kbd>
+  function
+  for the other evaluators in this chapter, reads queries from the
+  terminal.  For each query, it calls <kbd>qeval</kbd> with the query and a
+  stream that consists of a single empty frame.  This will produce the
+  stream of all possible matches (all possible extensions to the empty
+  frame).  For each frame in the resulting stream, it instantiates the
+  original query using the values of the variables found in the frame.
+  This stream of instantiated queries is then 
+  printed.<a class="superscript" id="footnote-link-8" href="91#footnote-8">[8]</a>
+      </p>
+
+      <p>
+  
+  
+  The driver also checks for the special command <kbd>assert!</kbd>, which
+  signals that the input is not a query but rather an assertion or rule
+  to be added to the data base.  For instance,
+
+  <div class="snippet" id="javascript_91_12_div"></div><div class="pre-prettyprint">
+<pre class="prettyprint" title="Evaluate Javascript expression" onclick="new window.JavascriptConsole('','javascript_91_12','', event,1.0);window.eval('');"></pre>
+<a href="http://source-ide-new.surge.sh/?snippet=&amp;hidden=" class="snippet-ide-link btn btn-primary">[Open in IDE]</a>
+</div>
+  
+      </p>
+
+    <hr>
+<div class="footnote">
+<a class="footnote-number" id="footnote-1" href="91#footnote-link-1">[1] </a><FOOTNOTE>Because matching is generally very expensive, we would
+    
+    like to avoid applying the full matcher to every element of the data
+    base.  This is usually arranged by breaking up the process into a
+    fast, coarse match and the final match.  The coarse match filters the
+    data base to produce a small set of candidates for the final match.
+    With care, we can arrange our data base so that some of the work of
+    coarse matching can be done when the data base is constructed rather
+    
+    then when we want to select the candidates.  This is called <EM>
+      indexing</EM> the data base.  There is a vast technology built around
+    data-base-indexing schemes.  Our implementation, described in
+    Section <REF NAME="sec:implementing-the-query-system"></REF>, contains a
+    simple-minded form of such an optimization.</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-2" href="91#footnote-link-2">[2] </a><FOOTNOTE>But this kind of exponential explosion is not common in <kbd>and</kbd>
+    queries because the added conditions tend to reduce rather than expand
+    the number of frames produced.</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-3" href="91#footnote-link-3">[3] </a><FOOTNOTE>There is a large literature on data-base-management
+    systems that is concerned with how to handle complex queries
+    efficiently.</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-4" href="91#footnote-link-4">[4] </a><FOOTNOTE>There is a subtle difference between this filter
+    implementation of <kbd>not</kbd> and the usual meaning of <kbd>not</kbd> in
+    mathematical logic.  See Section <REF NAME="sec:math-logic"></REF>.</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-5" href="91#footnote-link-5">[5] </a><FOOTNOTE>In one-sided pattern matching, all the equations that
+    contain pattern variables are explicit and already solved for the
+    unknown (the pattern variable).</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-6" href="91#footnote-link-6">[6] </a><FOOTNOTE>Another way to think of unification is that it generates the most
+    general pattern that is a specialization of the two input patterns.
+    That is, the unification of <kbd>???</kbd> and <kbd>???</kbd> is <kbd>???</kbd>, and the unification of <kbd>???</kbd> and <kbd>???</kbd>, discussed above, is <kbd>???</kbd>.
+    For our implementation, it is more convenient to think of the result
+    of unification as a frame rather than a pattern.</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-7" href="91#footnote-link-7">[7] </a><FOOTNOTE>Since unification is a
+        
+        
+        generalization of matching, we could simplify the system by using the
+        unifier to produce both streams.  Treating the easy case with the
+        simple matcher, however, illustrates how matching (as opposed to
+        full-blown unification) can be useful in its own right.</FOOTNOTE>
+</div>
+<div class="footnote">
+<a class="footnote-number" id="footnote-8" href="91#footnote-link-8">[8] </a><FOOTNOTE>The reason we use streams (rather than lists) of frames is that the
+    
+    
+    recursive application of rules can generate
+    infinite numbers of values that satisfy a query.  The delayed
+    evaluation embodied in streams is crucial here: The system will print
+    responses one by one as they are generated, regardless of whether
+    there are a finite or infinite number of responses.</FOOTNOTE>
+</div></SUBSECTION></div>
+    </div>
+
+    <div class="nav">
+    <!--
+      <div type="button" class="btn btn-secondary">
+        <a href="http://localhost:3000/chapters/90">&lt; Previous</a>
+    </div>
+    -->
+      <div type="button" class="btn btn-secondary">
+        <a class="scroll-next" href="92">Next &gt;</a>
+      </div>
+
+
+  </div>
+  <script>
+//<![CDATA[
+var chapter_id = 91;
+//]]>
+</script>
+  <div class="next-page"></div>
+</div>
+
+     </div><!-- /.container -->
+
+     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+     -->
+   </body>
+</html>
